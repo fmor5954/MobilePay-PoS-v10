@@ -151,11 +151,11 @@ Headers:
 
 The Client_id and client_secret will be sent to the integrator in a closed zip file from developer@mobilepay.dk to integrators e-mail 
 
-Parameter description:
-|grant_type  | client_credentials |
-|--|--|
-| vat_number | VAT Number of the Merchant the integrator is integration on behalf. Will be applied to the JWT access token, if supplied. Can be left empty. (OPTIONAL). |
-
+ 
+| Parameter | Value  | Description  |
+| :---         |     :---:      |          :---:  |
+| grant_type    | client_credentials     | The Client Credentials grant type is used by clients to obtain an access token outside of the context of a user.     |
+| vat_number     | DK12345678       | VAT Number of the Merchant the integrator is integrating on behalf. It will be applied to the JWT access token, if supplied. We support FI and DK vat numbers. The vat number consists of country prefix (either FI or DK) and 8 digits.      |
 
 Example of response body from SandProd environment:
 
