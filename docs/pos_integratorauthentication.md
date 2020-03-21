@@ -27,15 +27,15 @@ This document does not include a compete specification of the endpoints, respons
 
 
 ##  `GET /integrator-authentication/.well-known/openid-configuration`
+The OpenID Connect protocol requires the use of multiple endpoints for authenticating users, and for requesting resources.
 
-The discovery endpoint, also known as the "well-known endpoint" is a set of OpenID Connect properties, used by clients integrating against a OpenID authentication provider. The documents describes which claims, scopes, grant types and endpoints are to be used upon authentication.
+To simplify implementations and increase flexibility, OpenID Connect allows the use of a "Discovery document," a JSON document found at a well-known location containing key-value pairs which provide details about the OpenID Connect provider's configuration, including the URIs of the authorization, token, scopes, claims claims, scopes, grant types and endpoints are to be used upon authentication.
 
 Headers:
 
 X-IBM-Client-Id: Client_Id supplied upon certification.
 
-Example of response body from SandProd environment:
-
+Here is an example of such a document from MobilePay SandProd environment; the field names are those specified in OpenID Connect Discovery 1.0 (refer to that document for their meanings). The values are purely illustrative and might change, although they are copied from from a recent version of the actual Integrator Authentication Discovery document:
 
 ```
 {
