@@ -11,7 +11,7 @@ In order for Integrators to be able to use MobilePay APIs, first they'll have to
 
 [![](assets/images/clientcredentials.png)](assets/images/clientcredentials.png)
 
-The Integrator Authentication solution is based on the OpenID/OAuth 2.0 specification. Currently, the only flow supported is the Client Credentials grant type. Credentials Flow (defined in OAuth 2.0 RFC 6749, section 4.4), in which Integrators pass along their Client ID and Client Secret to authenticate themselves and get a token.
+The Integrator Authentication solution is based on the OpenID/OAuth 2.0 specification. By following the OpenID Connect protocol, MobilePay makes it easy for integrators to integrate with MobilePay. Currently, the  flow supported is the Client Credentials grant type. Credentials Flow (defined in OAuth 2.0 RFC 6749, section 4.4), in which Integrators pass along their Client ID and Client Secret to authenticate themselves and get a token.
 
 [![](assets/images/clientcredentialsdiagram.png)](assets/images/clientcredentialsdiagram.png)
 
@@ -71,14 +71,18 @@ Here is an example of such a document from MobilePay SandProd environment; the f
  
 ```
 
-### <a name="statuscodes"></a>Expected status codes
+### <a name="statuscodes"></a>Expected status codes for integrator authentication
+<details>
+   <summary>Status codes</summary><br>
 
 You might encounter the following status codes :
 
-1. `200 - OK`  
-
-2. `401 - Unauthorized` , if the client is not authorized/authenticated through the API Gateway
+| StatusCode | Description |
+|--|--|
+| 200 | OK |
+ | 401 - Unauthorized | if the client is not authorized/authenticated through the API Gateway |
  
+ </details><br>
  
 ### cURL example:
 
