@@ -1,6 +1,6 @@
 # **Integrator Authentication:**
 
-In order for Integrators to be able to use MobilePay APIs, first they'll have to obtain an access token from the Integrator Authentication service. 
+In order for Integrators to be able to use MobilePay APIs, first they'll have to obtain an access token from the Integrator Authentication service. This way, MobilePay knows who is calling our service. 
 
 ### **Environments:**
 
@@ -141,7 +141,7 @@ curl --location --request GET 'https://api.sandbox.mobilepay.dk/integrator-authe
 
 ## `POST /connect/token`
 
-Used when requesting an access token for an onboarded integrator client.
+The token endpoint is when requesting an access token for an onboarded integrator client.
 
 Headers:
 
