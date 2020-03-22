@@ -101,7 +101,7 @@ Headers:
 
  - `X-IBM-Client-Id` supplied upon certification.
 
-Example of response body from SandProd environment:
+This section provides an example of a JWK response body  
 
 
 ```
@@ -122,6 +122,21 @@ Example of response body from SandProd environment:
     ]
 }
 ```
+
+
+ 
+# JSON Web Key (JWK) Format
+
+| Term | Description |
+|------|-------------|
+| `kty` | (key type) parameter identifies the cryptographic algorithm family used with the key, here "RSA"   |
+| `use`         |  (public key use) parameter identifies the intended use ofthe public key.  The "use" parameter here is employed to indicate that a public key is for verifying the signature on data.|
+|  `kid` | (key ID) parameter is used to match a specific key. |
+| `x5t`        |   (X.509 certificate SHA-1 thumbprint) parameter is a base64url-encoded SHA-1 thumbprint (a.k.a. digest) of the DER encoding of an X.509 certificate  |
+| `e`         |   a RSA key value |
+| `n`      |  a RSA key value|
+| `x5c`       |    (X.509 Certificate Chain) Parameter parameter contains a chain of one or more PKIX certificates The certificate chain is represented as a JSON array of certificate value strings. |
+| `alg`        |    (algorithm) parameter identifies the algorithm intended for use with the key. |
 
 ### Expected status codes
 
