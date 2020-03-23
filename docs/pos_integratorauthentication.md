@@ -33,7 +33,7 @@ To simplify implementations and increase flexibility, OpenID Connect allows the 
 
 Headers:
 
-X-IBM-Client-Id: Client_Id supplied upon certification.
+`X-IBM-Client-Id`: Client_Id supplied upon certification.
 
 Here is an example of such a document from MobilePay SandProd environment; the field names are those specified in OpenID Connect Discovery 1.0 (refer to that document for their meanings). The values are purely illustrative and might change, although they are copied from from a recent version of the actual Integrator Authentication Discovery document:
 
@@ -165,7 +165,7 @@ The token endpoint is when requesting an access token for an onboarded integrato
 Headers:
 
  - **Content-Type**: x-www-urlencoded
- - **X-IBM-Client-Id**: Client_Id supplied upon certification.
+ -`X-IBM-Client-Id`: Client_Id supplied upon certification.
  - **Authorization**: Basic ({CLIENT_ID}:{CLIENT_SECRET}).toBase64EncodedString().
 
 The Client_id and client_secret will be sent to the integrator in a closed zip file from developer@mobilepay.dk to integrators e-mail 
