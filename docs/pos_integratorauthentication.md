@@ -21,7 +21,7 @@ The Integrator Authentication solution is based on the OpenID/OAuth 2.0 specific
  4. The Client application can use the Access Token to call the API
  5. The API responds with requested data.
 
-### **Onboarding**
+## **Onboarding**
 
  - [ ] 1. **Read API documentation**. You'll find it in the  [APIs menu](https://developer.mobilepay.dk/product). *The API documentation provides insight into the structure of the API and will help you determine the best approach for integration as well as provide details on typical use cases.*
 
