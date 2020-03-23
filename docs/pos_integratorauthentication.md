@@ -1,4 +1,4 @@
-## **Onboarding**
+# **Onboarding to PoS**
 
  - [ ] 1. **Read API documentation**. You'll find it in the  [APIs menu](https://developer.mobilepay.dk/product).  
 
@@ -10,13 +10,13 @@
 -  PoS V10 for Integrators  
 -  User simulation for PoS 
 
-### Step 2 - Authentication
+### Step 2 - Authentication for PoS
 
 ----------
  
  - [ ] 1. Receive OIDC credentials via zip file. The zip file will be sent via e-mail. The zip file is locked with a password. DeveloperSupport will provide the password via text message, due to security reasons.
  
- If you have any questions, please write to developer@mobilepay.dk
+Now you are ready to move on to the authentication section below.  
 
 # **Integrator Authentication:**
 
