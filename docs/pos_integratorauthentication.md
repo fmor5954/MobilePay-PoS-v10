@@ -1,8 +1,28 @@
+## **Onboarding**
+
+ - [ ] 1. **Read API documentation**. You'll find it in the  [APIs menu](https://developer.mobilepay.dk/product).  
+
+ - [ ] 2.  **Log-in** Go to  [Sandbox developer portal](https://sandbox-developer.mobilepay.dk/ ) and log in with your credentials.
+
+ - [ ] 3.  **Create app** - My Apps > Create new App to register a new application. IMPORTANT: _Please make a note of your Client Secret as you will only see this once! You need to supply the `x-ibm-client-id` and `x-ibm-client-secret` when calling the api. You should always store the `x-ibm-client-id` in a secure location, and never reveal it publicly. If you suspect that the secret key has been compromised, you may reset it immediately by clicking the link on the application details page._
+
+ - [ ] 4.  **Subscribe to APIs.**  To implement MobilePay PoS, go to  [APIs](https://sandbox-developer.mobilepay.dk/product)  and subscribe to the following APIs:
+-  PoS V10 for Integrators  
+-  User simulation for PoS 
+
+### Step 2 - Authentication
+
+----------
+ 
+ - [ ] 1. Receive OIDC credentials via zip file. The zip file will be sent via e-mail. The zip file is locked with a password. DeveloperSupport will provide the password via text message, due to security reasons.
+ 
+ If you have any questions, please write to developer@mobilepay.dk
+
 # **Integrator Authentication:**
 
 In order for Integrators to be able to use MobilePay APIs, first they'll have to obtain an access token from the Integrator Authentication service. This way, MobilePay knows who is calling our service. 
 
-### **Environments:**
+  **Environments:**
 
  - SandBox: [https://api.sandbox.mobilepay.dk](https://api.sandbox.mobilepay.dk/)[/integrator-authentication](https://api.mobilepay.dk/integrator-authentication)
  - Production: [https://api.mobilepay.dk/integrator-authentication](https://api.mobilepay.dk/integrator-authentication)
@@ -21,28 +41,6 @@ The Integrator Authentication solution is based on the OpenID/OAuth 2.0 specific
  4. The Client application can use the Access Token to call the API
  5. The API responds with requested data.
 
-## **Onboarding**
-
- - [ ] 1. **Read API documentation**. You'll find it in the  [APIs menu](https://developer.mobilepay.dk/product). *The API documentation provides insight into the structure of the API and will help you determine the best approach for integration as well as provide details on typical use cases.*
-
- - [ ] 2.  **Log-in** Go to  [Sandbox developer portal](https://sandbox-developer.mobilepay.dk/ ) and log in with your credentials.
-
- - [ ] 3.  **Create app** - My Apps > Create new App to register a new application. IMPORTANT: _Please make a note of your Client Secret as you will only see this once! You need to supply the `x-ibm-client-id` and `x-ibm-client-secret` when calling the api. You should always store the `x-ibm-client-id` in a secure location, and never reveal it publicly. If you suspect that the secret key has been compromised, you may reset it immediately by clicking the link on the application details page._
-
- - [ ] 4.  **Subscribe to APIs.**  To implement MobilePay PoS, go to  [APIs](https://sandbox-developer.mobilepay.dk/product)  and subscribe to the following APIs:
--  PoS V10 for Integrators  
--  User simulation for PoS 
-
-### Step 2 - Authentication
-
-----------
-Once you have 
-
- - [ ] 1. Received OIDC credentials via zip file. The zip file will be sent via e-mail. The zip file is locked with a password. DeveloperSupport will provide the password via text message, due to security reasons.
- 
-  
-  
- If you have any questions, please write to developer@mobilepay.dk
 
 # **Endpoint description:**
 
