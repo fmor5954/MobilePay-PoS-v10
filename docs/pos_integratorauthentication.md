@@ -5,7 +5,7 @@
 
  - [ ] 2.  **Log-in** Go to  [Sandbox developer portal](https://sandbox-developer.mobilepay.dk/ ) and log in with your credentials.
 
- - [ ] 3.  **Create app** - My Apps > Create new App to register a new application. IMPORTANT: _Please make a note of your Client Secret as you will only see this once! You need to supply the `x-ibm-client-id`  when calling the api. You should always store the `x-ibm-client-id` in a secure location, and never reveal it publicly. If you suspect that the secret key has been compromised, you may reset it immediately by clicking the link on the application details page. More details about the usage of `x-ibm-client-id` below in the authentication section. 
+ - [ ] 3.  **Create app** - My Apps > Create new App to register a new application.   You need to supply the `x-ibm-client-id`  when calling the api. You should always store the `x-ibm-client-id` in a secure location, and never reveal it publicly. If you suspect that the secret key has been compromised, you may reset it immediately by clicking the link on the application details page. More details about the usage of `x-ibm-client-id` below in the authentication section. 
 
  - [ ] 4.  **Subscribe to APIs.**  To implement MobilePay PoS, go to  [APIs](https://sandbox-developer.mobilepay.dk/product)  and subscribe to the following APIs:
 -  PoS V10 for Integrators  
@@ -33,12 +33,12 @@ The following URL are the environment routes for the Integrator Authentication A
 ### **Credentials Flow:**
 
 
-The Integrator Authentication solution is based on the OpenID/OAuth 2.0 specification. By following the OpenID Connect protocol, MobilePay makes it easy for integrators to integrate with MobilePay. Currently, the  flow supported is the Client Credentials grant type. Credentials Flow (defined in OAuth 2.0 RFC 6749, section 4.4), in which Integrators pass along their Client ID and Client Secret to authenticate themselves and get a token.
+The Integrator Authentication solution is based on the OpenID/OAuth 2.0 specification. By following the OpenID Connect protocol, MobilePay makes it easy for integrators to integrate with MobilePay. Currently, the  flow supported is the Client Credentials grant type. Credentials Flow (defined in OAuth 2.0 RFC 6749, section 4.4), in which Integrators pass along their `client_id` and `client_secret` to authenticate themselves and get a token.
 
 [![](assets/images/clientcredentialsdiagram.png)](assets/images/clientcredentialsdiagram.png)
 
  1. The client app authenticates with the Authorization Server using its Client ID and Client Secret /token endpoint
- 2. The Authorization Server validates the Client ID and Client Secret.
+ 2. The Authorization Server validates the `client_id` and `client_secret`.
  3. The Authorization Server responds with an Access Token.
  4. The Client application can use the Access Token to call the API
  5. The API responds with requested data.
@@ -60,7 +60,7 @@ Headers:
  - **``x-ibm-client-id``**: Client_Id supplied upon certification.
  - **Authorization**: Basic ({CLIENT_ID}:{CLIENT_SECRET}).toBase64EncodedString().
 
-The Client_id and client_secret will be sent to the integrator in a closed zip file from developer@mobilepay.dk to integrators e-mail 
+The OAuth `client_id`and `client_secret` will be sent to the integrator in a closed zip file from developer@mobilepay.dk to integrators e-mail 
 
  
 | Parameter | Value  | Description  |
@@ -95,7 +95,7 @@ You might encounter the following status codes :
 
 ```
 curl --location --request POST 'https://api.sandbox.mobilepay.dk/integrator-authentication/connect/token' \
---header '`x-ibm-client-id`: {YOUR_CLIENT-ID}' \
+--header '`x-ibm-client-id`: {YOUR_GENERATED_CLIENT-ID}' \
 --header 'Content-Type: application/x-www-form-urlencoded' \
 --header 'Authorization: Basic ({YOUR_CLIENT_ID}:{YOUR_CLIENT_SECRET}).toBase64EncodedString()' \
 --data-urlencode 'grant_type=client_credentials' \
