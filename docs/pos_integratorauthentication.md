@@ -8,13 +8,14 @@
 
  - [ ] 4.  **Subscribe to APIs.**  To implement MobilePay PoS, go to  [APIs](https://sandbox-developer.mobilepay.dk/product)  and subscribe to the following APIs:
 -  PoS V10 for Integrators  
--  User simulation for PoS 
+-  PoS User simulation for Integrators
+-  Integrator Authentication 
 
 ### Step 2 - Authentication for PoS
 
 ----------
  
- - [ ] 1. Receive OIDC credentials via zip file. The zip file will be sent via e-mail. The zip file is locked with a password. DeveloperSupport will provide the password via text message, due to security reasons.
+ - [ ] 1. Receive OAuth Client Credentials via zip file. The zip file will be sent via e-mail. The zip file is locked with a password. DeveloperSupport will provide the password via text message, due to security reasons.
  
 Now you are ready to move on to the authentication section below.  
 
