@@ -95,7 +95,7 @@ You might encounter the following status codes :
 
 ```
 curl --location --request POST 'https://api.sandbox.mobilepay.dk/integrator-authentication/connect/token' \
---header '`x-ibm-client-id`: {YOUR_GENERATED_CLIENT-ID}' \
+--header 'x-ibm-client-id: {YOUR_GENERATED_CLIENT-ID}' \
 --header 'Content-Type: application/x-www-form-urlencoded' \
 --header 'Authorization: Basic ({YOUR_CLIENT_ID}:{YOUR_CLIENT_SECRET}).toBase64EncodedString()' \
 --data-urlencode 'grant_type=client_credentials' \
