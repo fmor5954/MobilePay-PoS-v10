@@ -4,7 +4,7 @@
 
  - [ ] 2.  **Log-in** Go to  [Sandbox developer portal](https://sandbox-developer.mobilepay.dk/ ) and log in with your credentials.
 
- - [ ] 3.  **Create app** - My Apps > Create new App to register a new application. IMPORTANT: _Please make a note of your Client Secret as you will only see this once! You need to supply the `x-ibm-client-id`  when calling the api. You should always store the `x-ibm-client-id` in a secure location, and never reveal it publicly. If you suspect that the secret key has been compromised, you may reset it immediately by clicking the link on the application details page. More details about the usage of `x-ibm-client-id` below. _
+ - [ ] 3.  **Create app** - My Apps > Create new App to register a new application. IMPORTANT: _Please make a note of your Client Secret as you will only see this once! You need to supply the `x-ibm-client-id`  when calling the api. You should always store the `x-ibm-client-id` in a secure location, and never reveal it publicly. If you suspect that the secret key has been compromised, you may reset it immediately by clicking the link on the application details page. More details about the usage of `x-ibm-client-id` below in the authentication section. 
 
  - [ ] 4.  **Subscribe to APIs.**  To implement MobilePay PoS, go to  [APIs](https://sandbox-developer.mobilepay.dk/product)  and subscribe to the following APIs:
 -  PoS V10 for Integrators  
@@ -45,7 +45,9 @@ The Integrator Authentication solution is based on the OpenID/OAuth 2.0 specific
 
 # **Endpoint description:**
 
-This document does not include a compete specification of the endpoints, responses and response codes. This information can be found in the API section of the Developer Portal.
+This document does not include a compete specification of the endpoints, responses and response codes. This information can be found in the [APIs section](https://developer.mobilepay.dk/product). of the Developer Portal.
+
+ 
 
 ## `POST /connect/token`
 
@@ -54,7 +56,7 @@ The token endpoint is when requesting an access token for an onboarded integrato
 Headers:
 
  - **Content-Type**: x-www-urlencoded
- -`X-IBM-Client-Id`: Client_Id supplied upon certification.
+ - **`X-IBM-Client-Id`**: Client_Id supplied upon certification.
  - **Authorization**: Basic ({CLIENT_ID}:{CLIENT_SECRET}).toBase64EncodedString().
 
 The Client_id and client_secret will be sent to the integrator in a closed zip file from developer@mobilepay.dk to integrators e-mail 
@@ -63,7 +65,7 @@ The Client_id and client_secret will be sent to the integrator in a closed zip f
 | Parameter | Value  | Description  |
 | :---         |     :---:      |          :---:  |
 | grant_type    | client_credentials     | The Client Credentials grant type is used by clients to obtain an access token outside of the context of a user.     |
-| vat_number     | DK-12345678 or FI-12345678       | VAT Number of the Merchant the integrator is integrating on behalf. It will be applied to the JWT access token, if supplied. We support FI and DK vat numbers. The vat number consists of country prefix (either FI or DK) and 8 digits.      |
+| merchant_vat     | DK-12345678 or FI-12345678       | VAT Number of the Merchant the integrator is integrating on behalf. It will be applied to the JWT access token, if supplied. We support FI and DK vat numbers. The vat number consists of country prefix (either FI or DK) and 8 digits.      |
 
 Example of response body from SandProd environment:
 
