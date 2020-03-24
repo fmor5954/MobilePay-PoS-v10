@@ -1,5 +1,6 @@
 # **Onboarding to PoS**
 
+
  - [ ] 1. **Read API documentation**. You'll find it in the  [APIs menu](https://developer.mobilepay.dk/product).  
 
  - [ ] 2.  **Log-in** Go to  [Sandbox developer portal](https://sandbox-developer.mobilepay.dk/ ) and log in with your credentials.
@@ -56,7 +57,7 @@ The token endpoint is when requesting an access token for an onboarded integrato
 Headers:
 
  - **Content-Type**: x-www-urlencoded
- - **`X-IBM-Client-Id`**: Client_Id supplied upon certification.
+ - **``x-ibm-client-id``**: Client_Id supplied upon certification.
  - **Authorization**: Basic ({CLIENT_ID}:{CLIENT_SECRET}).toBase64EncodedString().
 
 The Client_id and client_secret will be sent to the integrator in a closed zip file from developer@mobilepay.dk to integrators e-mail 
@@ -94,7 +95,7 @@ You might encounter the following status codes :
 
 ```
 curl --location --request POST 'https://api.sandbox.mobilepay.dk/integrator-authentication/connect/token' \
---header 'X-IBM-Client-Id: {YOUR_CLIENT-ID}' \
+--header '`x-ibm-client-id`: {YOUR_CLIENT-ID}' \
 --header 'Content-Type: application/x-www-form-urlencoded' \
 --header 'Authorization: Basic ({YOUR_CLIENT_ID}:{YOUR_CLIENT_SECRET}).toBase64EncodedString()' \
 --data-urlencode 'grant_type=client_credentials' \
