@@ -15,7 +15,7 @@
 
 ----------
  
- - [ ] 1. Receive OAuth Client Credentials via zip file. The zip file will be sent via e-mail. The zip file is locked with a password. DeveloperSupport will provide the password via text message, due to security reasons.
+ - [ ] 1. Receive OAuth Client Credentials via zip file. The Client Credentials are to be used when calling the token endpoint. The zip file will be sent via e-mail. The zip file is locked with a password. DeveloperSupport will provide the password via text message, due to security reasons.
  
 Now you are ready to move on to the authentication section below.  
 
