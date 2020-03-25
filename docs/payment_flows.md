@@ -20,9 +20,9 @@ It is also possible to initiate a payment on a PoS without an active check-in, a
 
 The diagram below shows all the possible states and transitions for a Payment flow. A payment can be cancelled by the customer until the customer has accepted the payment and the payment amount has been reserved. A payment can be cancelled by the client until it is captured or expires. After a payment has been captured, it can be [refunded](payment_flows#refunds), but can no longer be cancelled. A payment expires if it is neither cancelled nor captured within the lifetime of the reservation (at the moment at least 7 days). If a payment expires, the state transitions to *ExpiredAndCancelled*.
 A payment in the *Initiated* or *IssuedToUser* state can also be cancelled by MobilePay if it has been inactive for too long or an error occurs while reserving the payment amount on the customer's card or account. If a payment is
-cancelled by MobilePay the state transitions to *CancelledByMobilePay*.
+cancelled by MobilePay the state transitions to *CancelledByMobilePay*. If the payment includes an age restriction that prevents the user from completing the payment, the payment is rejected by MobilePay and the state transistions to *RejectedByMobilePayDueToAgeRestrictions*. Payments without age restrictions will never transition to the *RejectedByMobilePayDueToAgeRestrictions* state.
 
-[![](assets/images/reservation-payment-states.png)](assets/images/reservation-payment-states.png)
+[![](assets/images/reservation-payment-states.png)](assets/images/payment-states.png)
 
 ## <a name="prepared_payment_flow"></a>Prepared Payment Flow
 
@@ -40,7 +40,7 @@ A prepared payment starts out in state *Prepared* and remains in this state unti
 
 The diagram below shows all the possible states and transitions for a prepared payment flow. The "Prepared Payment Flow" state diagram expands upon the ["Payment Flow" state diagram](payment_flows#payment_flow_states) by adding two additional states, *Prepared* and *Paired*. The client and MobilePay can cancel a prepared payment. The customer can cancel a paired payment.
 
-[![](assets/images/reservation-payment-prepare-ready-states.png)](assets/images/reservation-payment-prepare-ready-states.png)
+[![](assets/images/reservation-payment-prepare-ready-states.png)](assets/images/prepared-payment-states.png)
 
 ## <a name="payment_management"></a> Payment Flow Error Handling
 Of all the ways a payment flow can fail, there are some error scenarios related to initiating payment flows that the client needs to focus on. The following sections describes how to handle payment-in-progress errors and how to handle payments hanging in the *Reserved* state.
