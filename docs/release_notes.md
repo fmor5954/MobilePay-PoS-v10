@@ -4,6 +4,10 @@ The Point of Sale API V10 will be in production **Q2 2020**. It will be released
 
 ## Changelog
 
+### 2020-03-25
+
+- Added a *RejectedByMobilePayDueToAgeRestrictions* [payment state](payment_flows#payment_flow_states), to indicate that a payment could not be completed because of age restrictions on the payment. 
+
 ### 2020-03-04
 
 - Added section Handling Timeouts in [API Principles](api_principles) section.
