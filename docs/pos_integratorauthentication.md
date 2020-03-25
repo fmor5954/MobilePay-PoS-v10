@@ -22,7 +22,7 @@ Now you are ready to move on to the authentication section below.
 
 # **Integrator Authentication:**
 
-In order for Integrators to be able to use MobilePay APIs, first they'll have to obtain an access token from the Integrator Authentication service. This way, MobilePay knows who is calling our service. 
+In order for Integrators to be able to use MobilePay APIs, first they'll have to obtain an `access_token` from the Integrator Authentication service. This way, MobilePay knows who is calling our service. 
 
   **Environments:**
 The following URL are the environment routes for the Integrator Authentication API
@@ -40,8 +40,8 @@ The Integrator Authentication solution is based on the OpenID/OAuth 2.0 specific
 
  1. The client app authenticates with the Authorization Server using its Client ID and Client Secret /token endpoint
  2. The Authorization Server validates the `client_id` and `client_secret`.
- 3. The Authorization Server responds with an Access Token.
- 4. The Client application can use the Access Token to call the API
+ 3. The Authorization Server responds with an `access_token`.
+ 4. The Client application can use the `access_token` to call the API
  5. The API responds with requested data.
 
 
@@ -53,7 +53,7 @@ This document does not include a compete specification of the endpoints, respons
 
 ## `POST /connect/token`
 
-The token endpoint is when requesting an access token for an onboarded integrator client.
+The token endpoint is when requesting an `access token` for an onboarded integrator client.
 
 Headers:
 
@@ -66,7 +66,7 @@ The OAuth `client_id`and `client_secret` will be sent to the integrator in a clo
  
 | Parameter | Value  | Description  |
 | :---         |     :---:      |          :---:  |
-| grant_type    | client_credentials     | The Client Credentials grant type is used by clients to obtain an access token outside of the context of a user.     |
+| grant_type    | client_credentials     | The Client Credentials grant type is used by clients to obtain an `access_token` outside of the context of a user.     |
 | merchant_vat     | DK12345678 or FI12345678       | VAT Number of the Merchant the integrator is integrating on behalf. It will be applied to the JWT access token, if supplied. We support FI and DK vat numbers. The vat number consists of country prefix (either FI or DK) and 8 digits.      |
 
 Example of response body from SandProd environment:
