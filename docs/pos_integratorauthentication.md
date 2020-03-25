@@ -8,7 +8,7 @@
  3.  **Create app** - My Apps > Create new App to register a new application.   You need to supply the `x-ibm-client-id`  when calling the api. You should always store the `x-ibm-client-id` in a secure location, and never reveal it publicly. If you suspect that the secret key has been compromised, you may reset it immediately by clicking the link on the application details page. More details about the usage of `x-ibm-client-id` below in the authentication section. 
 
 4.  **Subscribe to APIs.**  To implement MobilePay PoS, go to  [APIs](https://sandbox-developer.mobilepay.dk/product)  and subscribe to the following APIs:
--  PoS V10 for Integrators  
+-  PoS for Integrators  
 -  PoS User simulation for Integrators
 -  Integrator Authentication 
 
