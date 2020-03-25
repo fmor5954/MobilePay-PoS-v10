@@ -8,6 +8,9 @@ The Point of Sale API V10 will be in production **Q2 2020**. It will be released
 
 - Added a *RejectedByMobilePayDueToAgeRestrictions* [payment state](payment_flows#payment_flow_states), to indicate that a payment could not be completed because of age restrictions on the payment. 
 
+- Added section Authentication  [Authentication](pos_integratorauthentication) section so Integrators can use MobilePay APIs, as they'll have to obtain an access_token from the Integrator Authentication service. This way, MobilePay knows who is calling our service.
+
+
 ---
 
 ### 2020-03-04
