@@ -35,7 +35,8 @@ The following URL are the environment routes for the Integrator Authentication A
 
 The Integrator Authentication solution is based on the OpenID/OAuth 2.0 specification. By following the OpenID Connect protocol, MobilePay makes it easy for integrators to integrate with MobilePay. Currently, the  flow supported is the Client Credentials grant type. Credentials Flow (defined in OAuth 2.0 RFC 6749, section 4.4), in which Integrators pass along their `client_id` and `client_secret` to authenticate themselves and get a token.
 
-[![](assets/images/clientcredentialsdiagram.png)](assets/images/clientcredentialsdiagram.png)
+[![](assets/images/clientcredentialsdiagram.png)](assets/images/possekvensdiagram.png)
+
 
  1. The client app authenticates with the Authorization Server using its Client ID and Client Secret /token endpoint
  2. The Authorization Server validates the `client_id` and `client_secret`.
