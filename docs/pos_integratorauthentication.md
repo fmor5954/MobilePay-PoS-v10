@@ -23,7 +23,7 @@ In order for Integrators to be able to use MobilePay APIs, first they'll have to
   **Environments:**
 The following URL are the environment routes for the Integrator Authentication API
 
- - SandBox: `https://api.mobilepay.dk/integrator-authentication`
+ - SandBox: `https://api.sandbox.mobilepay.dk/integrator-authentication`
  - Production: `https://api.mobilepay.dk/integrator-authentication`
 
 ### **Credentials Flow:**
