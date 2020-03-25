@@ -1,22 +1,18 @@
-# **Onboarding to PoS**
+# **Steps to Authenticate PoS**
 
 
 1. **Read API documentation**. You'll find it in the  [APIs menu](https://developer.mobilepay.dk/product).  
 
 2.  **Log-in** Go to  [Sandbox developer portal](https://sandbox-developer.mobilepay.dk/ ) and log in with your credentials.
 
- 3.  **Create app** - My Apps > Create new App to register a new application.   You need to supply the `x-ibm-client-id`  when calling the api. You should always store the `x-ibm-client-id` in a secure location, and never reveal it publicly. If you suspect that the secret key has been compromised, you may reset it immediately by clicking the link on the application details page. More details about the usage of `x-ibm-client-id` below in the authentication section. 
+ 3.  **Create app** - My Apps > Create new App to register a new application.   You need to supply the `x-ibm-client-id`  when calling the api. You should always store the `x-ibm-client-id` in a secure location, and never reveal it publicly.  More details about the usage of `x-ibm-client-id` below in the authentication section. 
 
 4.  **Subscribe to APIs.**  To implement MobilePay PoS, go to  [APIs](https://sandbox-developer.mobilepay.dk/product)  and subscribe to the following APIs:
 -  PoS for Integrators  
 -  PoS User simulation for Integrators
 -  Integrator Authentication 
-
-### Step 2 - Authentication for PoS
-
-----------
  
-1. Receive OAuth Client Credentials via zip file. The Client Credentials are to be used when calling the token endpoint. The zip file will be sent via e-mail. The zip file is locked with a password. DeveloperSupport will provide the password via text message, due to security reasons.
+ 5.  **Receive OAuth Client Credentials via zip file.** The Client Credentials are to be used when calling the token endpoint. The zip file will be sent via e-mail. The zip file is locked with a password. DeveloperSupport will provide the password via text message, due to security reasons.
  
 Now you are ready to move on to the authentication section below.  
 
