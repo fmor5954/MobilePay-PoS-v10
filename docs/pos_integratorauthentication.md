@@ -44,6 +44,7 @@ The Integrator Authentication solution is based on the OpenID/OAuth 2.0 specific
  4. The Client application can use the `access_token` to call the API
  5. The API responds with requested data.
 
+[![](assets/images/possekvensdiagram.png)](assets/images/possekvensdiagram.png)
 
 # **Endpoint description:**
 
