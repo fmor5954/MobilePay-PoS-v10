@@ -7,12 +7,12 @@ Each PoS belongs to a *Store* which in turn is associated with a *Brand*. A bran
 
 Brands and stores are created by the merchant when onboarding with MobilePay PoS and the merchant will typically provide the ``merchantBrandId``s and ``merchantLocationId``s for the merchant's brands and stores to the integrator.
 
-When the integrator has received the ``merchantBrandId`` and the ``merchantLocationId`` they will have to call ``GET /api/v10/stores`` with the two ids, and in return they will receive a ``storeId`` which will be used to create all the PoSes on that store. The ``storeId`` will therefore have to be persisted in an application configuration file for subsequent calls to the V10 API. Below diagram illustrates a flow for getting the ``storeId`` using ``GET /api/v10/stores``.
+When the integrator has received the ``merchantBrandId`` and the ``merchantLocationId`` they will have to call ``GET /v10/stores`` with the two ids, and in return they will receive a ``storeId`` which will be used to create all the PoSes on that store. The ``storeId`` will therefore have to be persisted in an application configuration file for subsequent calls to the V10 API. Below diagram illustrates a flow for getting the ``storeId`` using ``GET /v10/stores``.
 
 [![](assets/images/get_store.png)](assets/images/get_store.png)
 
 ## <a name="pos_creation"></a> PoS Creation
-A PoS is created using the ````POST /api/v10/pointofsales```` endpoint. A PoS is identified in the PoS V10 API by a ````posId```` that is assigned by MobilePay upon creation of the PoS. Clients can provide their own internal identifier as a ````merchantPosId```` upon creation and use the ````GET /api/v10/pointofsales```` endpoint to lookup a ````posId```` based on a ````merchantPosId````. 
+A PoS is created using the ````POST /v10/pointofsales```` endpoint. A PoS is identified in the PoS V10 API by a ````posId```` that is assigned by MobilePay upon creation of the PoS. Clients can provide their own internal identifier as a ````merchantPosId```` upon creation and use the ````GET /v10/pointofsales```` endpoint to lookup a ````posId```` based on a ````merchantPosId````. 
 
 ### <a name="beacons"></a> Beacons
 The first thing to consider when creating a PoS is what beacon(s) will be used to connect MobilePay users to the given PoS.
@@ -33,7 +33,7 @@ In cases where the client uses a physical device then that device will have a Mo
 If reading the ````beaconId```` from the device is not possible, we recommend to store the ````beaconId```` locally in a configuration file so that it persists through reboots.
 
 ### <a name="callback"></a>Callback
-If the client system cannot detect when a MobilePay user wants to pay and therefore needs to use the [Notification service](detecting_mobilePay#notification), the client should set the callback parameter accordingly when calling ````POST /api/v10/pointofsales````.
+If the client system cannot detect when a MobilePay user wants to pay and therefore needs to use the [Notification service](detecting_mobilePay#notification), the client should set the callback parameter accordingly when calling ````POST /v10/pointofsales````.
 It is recommended to store the callback alias in the config file of the application.
 
 ### Naming
@@ -41,7 +41,7 @@ The last thing to keep in mind when creating a PoS is to consider the name. When
 
 ## <a name="pos_updating_deletion"></a>PoS Updating and Deletion
 
-A PoS can be deleted using the ````DELETE /api/v10/pointofsales/{posId}```` endpoint.
+A PoS can be deleted using the ````DELETE /v10/pointofsales/{posId}```` endpoint.
 
 We recommend only deleting a PoS if it is either not going to be used anymore, or you need to update it to reflect changes like a new callback alias, new name, new ````beaconId```` etc.
 
@@ -50,7 +50,7 @@ When a PoS is deleted it is no longer possible to issue payments. However it wil
 ## Keeping in sync with MobilePay
 
 ### When PoS reboots
-When the client reboots it is good practice to query the PoS with ````GET /api/v10/pointofsales```` with the ````merchantPosId```` and persist the ````posId```` in memory to use for initiating payments. If no PoS is returned, the client will have to re-create it. Here is the flow described:
+When the client reboots it is good practice to query the PoS with ````GET /v10/pointofsales```` with the ````merchantPosId```` and persist the ````posId```` in memory to use for initiating payments. If no PoS is returned, the client will have to re-create it. Here is the flow described:
 [![](assets/images/PoS_Onboarding.png)](assets/images/PoS_Onboarding.png)
 
 
