@@ -120,10 +120,10 @@ create two resources. The PoS V10 API thus requires the client to set an *idempo
 (`X-MobilePay-Idempotency-Key`) on each request when calling the following endpoints, to allow the 
 backend to identify retried calls:
 ````
-POST /api/v10/payments
-POST /api/v10/payments/prepare
-POST /api/v10/refunds
-POST /api/v10/pointofsales
+POST /v10/payments
+POST /v10/payments/prepare
+POST /v10/refunds
+POST /v10/pointofsales
 ````
 For each call to the endpoints above, the client should generate a unique idempotency key for the
 given call. In case the client decides to retry a call due to a failure, the client **must** use the
@@ -172,9 +172,9 @@ field to allow the backend to throttle polling calls from clients. The following
 a `pollDelayInMs` field in the response body:
 
 ````
-GET /api/v10/payments/{paymentId}
-GET /api/v10/refunds/{refundId}
-GET /api/v10/pointofsales/{posId}/checkin
+GET /v10/payments/{paymentId}
+GET /v10/refunds/{refundId}
+GET /v10/pointofsales/{posId}/checkin
 ````
 
 If a response includes a `pollDelayInMs` of 1000, the client **must** wait at least 1000ms (i.e. 1 second)
