@@ -97,5 +97,5 @@ curl --location --request POST 'https://api.sandbox.mobilepay.dk/integrator-auth
 --header 'Content-Type: application/x-www-form-urlencoded' \
 --header 'Authorization: Basic ({YOUR_CLIENT_ID}:{YOUR_CLIENT_SECRET}).toBase64EncodedString()' \
 --data-urlencode 'grant_type=client_credentials' \
---data-urlencode 'vat_number=DK12345678'
+--data-urlencode 'merchant_vat=DK12345678'
 ```
