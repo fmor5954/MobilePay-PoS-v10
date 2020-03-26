@@ -4,6 +4,12 @@ The Point of Sale API V10 will be in production **Q2 2020**. It will be released
 
 ## Changelog
 
+### 2020-03-26
+
+- Renamed `vat_number` parameter to `merchant_vat` for [Authentication](pos_integratorauthentication) endpoint and changed the format to remove the dash between country code and VAT (e.g., "DK12345678" instead of "DK-12345678"). 
+
+---
+
 ### 2020-03-25
 
 - Added a *RejectedByMobilePayDueToAgeRestrictions* [payment state](payment_flows#payment_flow_states), to indicate that a payment could not be completed because of age restrictions on the payment. 
