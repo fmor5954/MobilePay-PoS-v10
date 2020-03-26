@@ -15,7 +15,7 @@ This page contains information regarding all the non-successful status-codes and
 
 ## Payments
 <details>
-  <summary>GET /api/v10/payments/{paymentid} - Query a Payment</summary><br>
+  <summary>GET /v10/payments/{paymentid} - Query a Payment</summary><br>
 
 | StatusCode | ErrorCodes  | Description |
 |------------|-------------|-------------|
@@ -25,7 +25,7 @@ This page contains information regarding all the non-successful status-codes and
 </details><br>
 
 <details>
-  <summary>GET /api/v10/payments - Query Payments by a filter</summary><br> 
+  <summary>GET /v10/payments - Query Payments by a filter</summary><br> 
 
 | StatusCode | ErrorCodes  | Description |
 |------------|-------------|-------------|
@@ -34,7 +34,7 @@ This page contains information regarding all the non-successful status-codes and
 </details><br>
 
 <details>
-  <summary>POST /api/v10/payments - Initiate a Payment</summary><br>
+  <summary>POST /v10/payments - Initiate a Payment</summary><br>
 
 | StatusCode | ErrorCodes  | Description |
 |------------|-------------|-------------|
@@ -45,7 +45,7 @@ This page contains information regarding all the non-successful status-codes and
 </details><br>
 
 <details>
-  <summary>POST /api/v10/payments/prepare - Prepare a Payment</summary><br>
+  <summary>POST /v10/payments/prepare - Prepare a Payment</summary><br>
 
 | StatusCode | ErrorCodes  | Description |
 |------------|-------------|-------------|
@@ -56,7 +56,7 @@ This page contains information regarding all the non-successful status-codes and
 </details><br>
 
 <details>
-  <summary>POST /api/v10/payments/{paymentid}/ready - Ready a Payment</summary><br> 
+  <summary>POST /v10/payments/{paymentid}/ready - Ready a Payment</summary><br> 
 
 | StatusCode | ErrorCodes  | Description |
 |------------|-------------|-------------|
@@ -68,7 +68,7 @@ This page contains information regarding all the non-successful status-codes and
 </details><br>
 
 <details>
-  <summary>POST /api/v10/payments/{paymentid}/capture - Capture a Payment</summary><br>
+  <summary>POST /v10/payments/{paymentid}/capture - Capture a Payment</summary><br>
 
 | StatusCode | ErrorCodes  | Description |
 |------------|-------------|-------------|
@@ -80,7 +80,7 @@ This page contains information regarding all the non-successful status-codes and
 </details><br>
 
 <details>
-  <summary>POST /api/v10/payments/{paymentid}/cancel - Cancel a Payment</summary><br>
+  <summary>POST /v10/payments/{paymentid}/cancel - Cancel a Payment</summary><br>
 
 | StatusCode | ErrorCodes  | Description |
 |------------|-------------|-------------|
@@ -92,7 +92,7 @@ This page contains information regarding all the non-successful status-codes and
 
 ## Point of Sales
 <details>
-  <summary>GET /api/v10/pointofsales/{posid} - Query a Point of Sale</summary><br>
+  <summary>GET /v10/pointofsales/{posid} - Query a Point of Sale</summary><br>
 
 | StatusCode | ErrorCodes  | Description |
 |------------|-------------|-------------|
@@ -102,7 +102,7 @@ This page contains information regarding all the non-successful status-codes and
 </details><br>
 
 <details>
-  <summary>GET /api/v10/pointofsales - Query Point of Sales by a filter</summary><br>
+  <summary>GET /v10/pointofsales - Query Point of Sales by a filter</summary><br>
 
 | StatusCode | ErrorCodes  | Description |
 |------------|-------------|-------------|
@@ -111,7 +111,7 @@ This page contains information regarding all the non-successful status-codes and
 </details><br>
 
 <details>
-  <summary>GET /api/v10/pointofsales/{posid}/checkin - Query a checkin on a Point of Sale</summary><br>
+  <summary>GET /v10/pointofsales/{posid}/checkin - Query a checkin on a Point of Sale</summary><br>
 
 | StatusCode | ErrorCodes  | Description |
 |------------|-------------|-------------|
@@ -121,7 +121,7 @@ This page contains information regarding all the non-successful status-codes and
 </details><br>
 
 <details>
-  <summary>POST /api/v10/pointofsales - Create a Point of Sale</summary><br>
+  <summary>POST /v10/pointofsales - Create a Point of Sale</summary><br>
 
 | StatusCode | ErrorCodes  | Description |
 |------------|-------------|-------------|
@@ -131,7 +131,7 @@ This page contains information regarding all the non-successful status-codes and
 </details><br>
 
 <details>
-  <summary>DELETE /api/v10/pointofsales/{posid} - Delete a Point of Sale</summary><br>
+  <summary>DELETE /v10/pointofsales/{posid} - Delete a Point of Sale</summary><br>
 
 | StatusCode | ErrorCodes  | Description |
 |------------|-------------|-------------|
@@ -142,7 +142,7 @@ This page contains information regarding all the non-successful status-codes and
 
 ## Refunds
 <details>
-  <summary>GET /api/v10/refunds/{refundid} - Query a Refund</summary><br>
+  <summary>GET /v10/refunds/{refundid} - Query a Refund</summary><br>
 
 | StatusCode | ErrorCodes  | Description |
 |------------|-------------|-------------|
@@ -152,7 +152,7 @@ This page contains information regarding all the non-successful status-codes and
 </details><br>
 
 <details>
-  <summary>GET /api/v10/refunds - Query Refunds by a filter</summary><br>
+  <summary>GET /v10/refunds - Query Refunds by a filter</summary><br>
 
 | StatusCode | ErrorCodes  | Description |
 |------------|-------------|-------------|
@@ -161,7 +161,7 @@ This page contains information regarding all the non-successful status-codes and
 </details><br>
 
 <details>
-  <summary>POST /api/v10/refunds - Create a Refund</summary><br>
+  <summary>POST /v10/refunds - Create a Refund</summary><br>
 
 | StatusCode | ErrorCodes  | Description |
 |------------|-------------|-------------|
@@ -172,7 +172,7 @@ This page contains information regarding all the non-successful status-codes and
 </details><br>
 
 <details>
-  <summary>POST /api/v10/refunds/{refundid}/capture - Capture a reserved Refund</summary><br>
+  <summary>POST /v10/refunds/{refundid}/capture - Capture a reserved Refund</summary><br>
 
 | StatusCode | ErrorCodes  | Description |
 |------------|-------------|-------------|
@@ -183,7 +183,7 @@ This page contains information regarding all the non-successful status-codes and
 </details><br>
 
 <details>
-  <summary>POST /api/v10/refunds/{refundid}/cancel - Cancel a reserved Refund</summary><br>
+  <summary>POST /v10/refunds/{refundid}/cancel - Cancel a reserved Refund</summary><br>
 
 | StatusCode | ErrorCodes  | Description |
 |------------|-------------|-------------|
@@ -195,7 +195,7 @@ This page contains information regarding all the non-successful status-codes and
 
 ## Stores
 <details>
-  <summary>GET /api/v10/stores/{storeid} - Query a Store</summary><br>
+  <summary>GET /v10/stores/{storeid} - Query a Store</summary><br>
 
 | StatusCode | ErrorCodes  | Description |
 |------------|-------------|-------------|
@@ -204,7 +204,7 @@ This page contains information regarding all the non-successful status-codes and
 </details><br>
 
 <details>
-  <summary>GET /api/v10/stores - Query a Store by MerchantBrandId and MerchantLocationId</summary><br>
+  <summary>GET /v10/stores - Query a Store by MerchantBrandId and MerchantLocationId</summary><br>
 
 | StatusCode | ErrorCodes  | Description |
 |------------|-------------|-------------|
