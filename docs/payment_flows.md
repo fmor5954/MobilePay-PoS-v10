@@ -46,7 +46,7 @@ The diagram below shows all the possible states and transitions for a prepared p
 Of all the ways a payment flow can fail, there are some error scenarios related to initiating payment flows that the client needs to focus on. The following sections describes how to handle payment-in-progress errors and how to handle payments hanging in the *Reserved* state.
 
 ### Payment in progress error handling
-In the case of an unexpected restart of the client where the payment flow cannot be continued it might be necessary to cancel the active payment since there can be only one active payment on a PoS. If the ``paymentId`` of the active payment is lost it can be retrieved by calling ``GET api/v10/payments`` using the ``posId`` and setting the *active* boolean to true. When the ``paymentId`` is retrieved the payment can be cancelled and the PoS is now ready for a new payment flow. A sequence diagram showing how to handle a payment-in-progress error is shown below.
+In the case of an unexpected restart of the client where the payment flow cannot be continued it might be necessary to cancel the active payment since there can be only one active payment on a PoS. If the ``paymentId`` of the active payment is lost it can be retrieved by calling ``GET /v10/payments`` using the ``posId`` and setting the *active* boolean to true. When the ``paymentId`` is retrieved the payment can be cancelled and the PoS is now ready for a new payment flow. A sequence diagram showing how to handle a payment-in-progress error is shown below.
 [![](assets/images/initiate_payment_error_active_payment.png)](assets/images/initiate_payment_error_active_payment.png)
 
 ### Hanging payments in reserved state
@@ -83,7 +83,7 @@ The V10 API supports cancelling of payments and refunds.
 ### Cancelling Payments
 
 A payment is cancellable by the client until the state has changed to *Captured* or *ExpiredAndCancelled*. Furthermore, a payment can be cancelled by the customer when the payment is in state *Paired* or *IssuedToUser*. 
-Payments can be cancelled by calling the endpoint ``POST /api/v10/payments/{paymentId}/cancel``. It requires the ``paymentId`` of the payment to be cancelled. When the payment has been cancelled the state transitions to *CancelledByClient*. 
+Payments can be cancelled by calling the endpoint ``POST /v10/payments/{paymentId}/cancel``. It requires the ``paymentId`` of the payment to be cancelled. When the payment has been cancelled the state transitions to *CancelledByClient*. 
 If the customer cancels the payment the state will transition to *CancelledByUser*.
 
 The diagrams below show the sunshine scenarios for a payment cancelled by the client and a payment cancelled by the customer, respectively.
@@ -104,7 +104,7 @@ the ``paymentId`` by the ``orderId`` and cancel afterwards.
 
 ### Cancelling Refunds
 
-A refund is cancellable until it reaches the state *Captured* or *ExpiredAndCancelled*. Refunds can only be cancelled by the client since there is no customer involved in the process. A refund can be cancelled by calling the endpoint ``POST /api/v10/refunds/{refundId}/cancel``. It requires the id of the refund that was returned when the refund was initiated.
+A refund is cancellable until it reaches the state *Captured* or *ExpiredAndCancelled*. Refunds can only be cancelled by the client since there is no customer involved in the process. A refund can be cancelled by calling the endpoint ``POST /v10/refunds/{refundId}/cancel``. It requires the id of the refund that was returned when the refund was initiated.
 When the refund has been cancelled the state transitions to *CancelledByClient*. 
 
 [![](assets/images/cancel-refund-by-client.png)](assets/images/cancel-refund-by-client.png)
