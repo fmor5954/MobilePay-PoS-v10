@@ -23,17 +23,17 @@ The three values differ in the following way:
 
 ## Order IDs
 Order IDs are not required to be unique however this is highly recommended.
-In error cases where the ``paymentId`` is lost it can be retrieved based on the ``posId`` and the ``orderId`` by calling the ``GET /api/v10/payments`` endpoint. If the ``orderId`` is unique the endpoint will return the expected ``paymentId``. However, if the ``orderId`` in not unique the mapping is overwrited and the endpoint will return the latest ``paymentId`` that was associated with the specified ``orderId``.
+In error cases where the ``paymentId`` is lost it can be retrieved based on the ``posId`` and the ``orderId`` by calling the ``GET /v10/payments`` endpoint. If the ``orderId`` is unique the endpoint will return the expected ``paymentId``. However, if the ``orderId`` in not unique the mapping is overwrited and the endpoint will return the latest ``paymentId`` that was associated with the specified ``orderId``.
 
 ## Capture or cancellation of old reservations
 All reservations should be captured or cancelled as soon as possible practically. If an error occurs that result in either cancellation or capture being impossible the PoS client is responsible for persisting which payments should be captured at a later stage. When processing for capturing at the later stage, it is important that only payments that should be captured are processed.
 It is bad practice to poll for every outstanding payments that are in the *Reserved* state, since that could lead to payments being captured which should have been cancelled or expired.
 
 ## Polling
-It is possible to get information on a payment using ``GET /api/v10/payments/{paymentId}``, and it is possible to get information about an active check-in using ``GET /api/v10/pointofsales/{posId}/checkin``. 
+It is possible to get information on a payment using ``GET /v10/payments/{paymentId}``, and it is possible to get information about an active check-in using ``GET /v10/pointofsales/{posId}/checkin``. 
 For both of these endpoints, it is allowed to do polling at most once per second. Polling times are controlled by the backend. The response will always contain a time interval that specifies, when the endpoint should at the earliest be polled again. The recommendation is to poll as fast as allowed by the backend to ensure maximal merchant and customer experience.
 
 ## Payment restrictions
 It is possible to restrict which card types can be used for a payment. This restriction is available in order to support that some countries have restrictions on which cards can be used for certain products.
 It is also possible to set a minimum age for the paying customer. As an example, this can be set on payments involving alcohol or gambling products.
-The recommendation is to only set restrictions on payments where it is required to do so by the law or in case there are some business related reasons for restricting the payment. You can put restrictions when starting payments with either ``POST /api/v10/payments/`` or ``POST /api/v10/payments/{paymentId}/ready``. See [Restrictions formatting](input_formats#restrictions) for how to provide restrictions.
+The recommendation is to only set restrictions on payments where it is required to do so by the law or in case there are some business related reasons for restricting the payment. You can put restrictions when starting payments with either ``POST /v10/payments/`` or ``POST /v10/payments/{paymentId}/ready``. See [Restrictions formatting](input_formats#restrictions) for how to provide restrictions.
