@@ -8,7 +8,7 @@ For more information about the http headers, see [API principles](api_principles
 | Name | Format      | Description |
 |------|-------------|-------------|
 | `X-IBM-Client-Id` | Guid | Identifies an application created through MobilePay Developer Portal. |
-| `X-MobilePay-Merchant-VAT-Number` | Valid VAT number:<br>IsoCountryCode-VATNumber<br>Example: DK12345678 | Identifies the merchant the integrator is calling on behalf of |
+| `X-MobilePay-Merchant-VAT-Number` | Valid VAT number:<br>IsoCountryCodeVATNumber<br>Example: DK12345678 | Identifies the merchant the integrator is calling on behalf of |
 | `X-MobilePay-Client-System-Name` | String with at most 36 valid characters | Identifies the [integrator system](api_principles#client_identification) calling the API. |
 | `X-MobilePay-Client-System-Version` | Valid Client-Version:<br>Major.Minor.Build<br>Example: 1.2.1 | Identifies the [version of the integrator system](api_principles#client_identification) calling the API. |
 | `X-MobilePay-Idempotency-Key` | String with at most 36 valid characters | Used to allow calls to be [safely retried](api_principles#error_handling) in case of errors. |
