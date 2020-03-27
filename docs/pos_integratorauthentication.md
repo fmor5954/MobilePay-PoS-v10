@@ -45,12 +45,12 @@ headers must be set:
  - **``x-ibm-client-id``**: `client_id`
  - **``Authorization``**: Basic (`client_id`:`client_secret`).toBase64EncodedString().
 
-The OAuth `client_id`and `client_secret` will be sent to the integrator in a closed zip file from [developer@mobilepay.dk](mailto:developer@mobilepay.dk) to integrators e-mail (step 5 in the [Client onboarding guide](pos_integratorauthentication#client_onboarding).
+The OAuth `client_id`and `client_secret` will be sent to the integrator in a closed zip file from [developer@mobilepay.dk](mailto:developer@mobilepay.dk) to integrators e-mail (step 5 in the [Client onboarding guide](pos_integratorauthentication#client_onboarding)).
 
-In addition, the `grant_type` must be set and a `merchant_vat` parameter may optionally be set as described below:
+In addition, the `grant_type` parameter must be set and a `merchant_vat` parameter may optionally be set as described below:
  
 | Parameter | Value  | Description  |
-| :---         |     :---:      |          :---:  |
+| :---         |     :---:      | :---  |
 | `grant_type` | client_credentials | The Client Credentials grant type is used by clients to obtain an `access_token` outside of the context of a user.     |
 | `merchant_vat` | DK12345678 or FI12345678 | VAT number of the merchant the integrator client is calling on behalf of. The PoS V10 API supports FI and DK VAT numbers. The VAT number consists of country prefix (either FI or DK) and 8 digits. |
 
