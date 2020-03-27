@@ -9,6 +9,7 @@ The following list describes the changes in overview:
   * No API key and HMAC validation
   * Use of access tokens
   * Vendor Identification and Version numbering
+  * All endpoints requires TLS 1.2
 * The Error messages are more informative
 * There are changes to the payment flow
   * Inclusion of the Prepare-Ready flow
