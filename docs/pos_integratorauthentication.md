@@ -3,7 +3,7 @@ The MobilePay PoS V10 API uses TLS for communication security and data integrity
 
 # <a name="client_onboarding"></a>**Onboarding a PoS integrator client**
 
-1. **Read API documentation.** You will find it in the  [APIs menu](https://developer.mobilepay.dk/product).  
+1. **Read API documentation.** You will find it in the  [APIs menu](https://sandbox-developer.mobilepay.dk/product).  
 
 2.  **Log-in on the developer portal.** Go to [Sandbox developer portal](https://sandbox-developer.mobilepay.dk/) and log in with your credentials.
 
