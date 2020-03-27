@@ -4,6 +4,14 @@ The Point of Sale API V10 will be in production **Q2 2020**. It will be released
 
 ## Changelog
 
+### 2020-03-27
+
+- Dropped the `x-ibm-client-system-name` header and modified the [API principles](api_principles) page to explain how the `x-ibm-client-system-version` header will be used for client versioning.
+
+- Renamed all `X-IBM-*` and `X-MobilePay-*` headers to be lowercase in the documentation (the actual headers are case-insensitive).
+
+---
+
 ### 2020-03-26
 
 - Renamed `vat_number` parameter to `merchant_vat` for [Authentication](pos_integratorauthentication) endpoint and changed the format to remove the dash between country code and VAT (e.g., "DK12345678" instead of "DK-12345678"). 
