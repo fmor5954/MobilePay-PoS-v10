@@ -21,7 +21,7 @@ The MobilePay PoS V10 API uses TLS for communication security and data integrity
 backend). The API currently uses TLS 1.2. It is the integrator's responsibility to plan for an upgrade to TLS 1.3, when
 TLS 1.2 is deprecated. The MobilePay PoS V10 API uses access tokens to authenticate calls from clients. After [obtaining
 an access token](pos_integratorauthentication), the client must send the access token in an Authorization header along with the
-`client_id` as follows in all calls to the MobilePay PoS API:
+`client_id` as follows in all calls to the MobilePay PoS V10 API:
 
 ````
 --header 'x-ibm-client-id: {client_id}'
