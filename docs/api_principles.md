@@ -28,7 +28,7 @@ an access token](pos_integratorauthentication), the client must send the access 
 --header 'Authorization: Bearer {access_token}'
 ````
 
-## <a name="client_identification"></a> Client Versioning
+## <a name="client_versioning"></a> Client Versioning
 
 In addition to the access token which identifies the client calling the MobilePay PoS V10 API, all calls must also
 include the `x-mobilepay-client-system-version` header to identify the version of the client software and verifythat the given system has been [certified](api_principles#self_certification).
