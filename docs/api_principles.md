@@ -17,21 +17,15 @@ The API is defined using the RESTful principles.
 
 ## <a name="security_model"></a> Security Model
 
-### Communication Security
-
 The MobilePay PoS V10 API uses TLS for communication security and data integrity (secure channel between the client and the 
 backend). The API currently uses TLS 1.2. It is the integrator's responsibility to plan for an upgrade to TLS 1.3, when
-TLS 1.2 is deprecated. 
-
-### Integrator Authorization
-
-The MobilePay API Gateway is ensuring the authentication of all PoS API requests. 
-In order to be granted access to the MobilePay PoS API each integrator/vendor will have to enroll their clients as a client (called App) in our API Gateway Developer Portal (see [Client Identification](api_principles#client_identification) for more information).
-
-Creating an app in MobilePay Developer Portal will create a client ID that should be used in all calls to the MobilePay PoS API in the following way:
+TLS 1.2 is deprecated. The MobilePay PoS V10 API uses access tokens to authenticate calls from clients. After [obtaining
+an access token](pos_integratorauthentication), the client must send the token in an Authorization header along with the
+`client_id` in the `x-ibm-client-id` header in all calls to the MobilePay PoS API.
 
 ````
---header 'x-ibm-client-id: 80e0075c-d0b5-4b74-a466-ecaca65234b0'
+--header 'x-ibm-client-id: {client_id}'
+--header 'Authorization: Bearer {access_token}'
 ````
 
 ## <a name="client_identification"></a> Client Identification
