@@ -42,8 +42,8 @@ api_principles_url: "api_principles"
 api_principles:
 - title: Security Model
   url: "api_principles#security_model"
-- title: Client Identification
-  url: "api_principles#client_identification"
+- title: Client Versioning
+  url: "api_principles#client_versioning"
 - title: API Responses
   url: "api_principles#api_responses"
 - title: Error Handling
