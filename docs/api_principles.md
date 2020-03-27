@@ -17,31 +17,22 @@ The API is defined using the RESTful principles.
 
 ## <a name="security_model"></a> Security Model
 
-### Communication Security
-
 The MobilePay PoS V10 API uses TLS for communication security and data integrity (secure channel between the client and the 
 backend). The API currently uses TLS 1.2. It is the integrator's responsibility to plan for an upgrade to TLS 1.3, when
-TLS 1.2 is deprecated. 
-
-### Integrator Authorization
-
-The MobilePay API Gateway is ensuring the authentication of all PoS API requests. 
-In order to be granted access to the MobilePay PoS API each integrator/vendor will have to enroll their clients as a client (called App) in our API Gateway Developer Portal (see [Client Identification](api_principles#client_identification) for more information).
-
-Creating an app in MobilePay Developer Portal will create a client ID that should be used in all calls to the MobilePay PoS API in the following way:
+TLS 1.2 is deprecated. The MobilePay PoS V10 API uses access tokens to authenticate calls from clients. After [obtaining
+an access token](pos_integratorauthentication), the client must send the access token in an Authorization header along with the
+`client_id` as follows in all calls to the MobilePay PoS V10 API:
 
 ````
---header 'X-IBM-Client-Id: 80e0075c-d0b5-4b74-a466-ecaca65234b0'
+--header 'x-ibm-client-id: {client_id}'
+--header 'Authorization: Bearer {access_token}'
 ````
 
-## <a name="client_identification"></a> Client Identification
+## <a name="client_identification"></a> Client Versioning
 
-All calls to the MobilePay PoS V10 API must include the following two headers `X-MobilePay-Client-System-Name` and
-`X-MobilePay-Client-System-Version` to identify the client system and verify that the given system has been [certified](api_principles#self_certification).
-The Client Name (`X-MobilePay-Client-System-Name`) is a suitable name used for the 
-client, preferably the name that the integrator uses in their own communication. This way support communication 
-between merchant, integrator and MobilePay uses the same name which should aid in removing confusion in the support 
-situation. The Client Version (`X-MobilePay-Client-System-Version`) is a 3 dimensional number Major.Minor.Build. It 
+In addition to the access token which identifies the client calling the MobilePay PoS V10 API, all calls must also
+include the `x-mobilepay-client-system-version` header to identify the version of the client software and verifythat the given system has been [certified](api_principles#self_certification).
+The Client Version (`x-mobilepay-client-system-version`) is a 3 dimensional number Major.Minor.Build. It 
 is recommended that when the client software is updated, the client version is updated accordingly. 
 The client version will be used by MobilePay to block versions of clients that are not certified 
 and/or are misbehaving. An example of misbehavior is spamming irrelevant HTTP calls that endanger fast 
@@ -52,16 +43,15 @@ The three parts of the Client Version is defined as described below.
 * Minor version represents minor changes to the client version, changes that introduces new features or a change in the way internal logic is handled. Minor version changes are perhaps not communicated to merchants. A minor change requires recertification.
 * Build version represents a new build of the client, including minor bug-fixes and changes of the lowest magnitude. A new build version does not require recertification.
 
-Certification requirements in regard to changes to Client Name and Client Version are the following
+Certification requirements in regard to changes to Client Version are as follows
 
-* Changes in Client Name, major version or minor version require a new Certification.
+* Changes in major version or minor version require a new Certification.
 * Changes in Build version do not require a new Certification.
 
-The Client Name and Client Version should be added in all calls as shown below.
+The Client Version should be added in all calls as shown below.
 
 ````
---header 'X-MobilePay-Client-System-Name: MobilePay Pos Client Reference Implementation'
---header 'X-MobilePay-Client-System-Version: 2.1.1'
+--header 'x-mobilepay-client-system-version: 2.1.1'
 ````
 
 ## <a name="api_responses"></a> API Responses
