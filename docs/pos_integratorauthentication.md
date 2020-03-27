@@ -36,7 +36,7 @@ The Integrator Authentication solution is based on the OpenID/OAuth 2.0 specific
 
 # **Obtaining an access token:**
 
-This document only describes the token endpoint used to request an access token. A complete specification of the endpoints, responses and response codes for the Integrator Authentication API can be found in the [APIs section](https://developer.mobilepay.dk/product) of the Developer Portal.
+This document only describes the token endpoint used to request an access token. A complete specification of the endpoints, responses and response codes for the Integrator Authentication API can be found in the [APIs section](https://sandbox-developer.mobilepay.dk/product) of the Developer Portal.
  
 The token endpoint (`POST /connect/token`) is used when requesting an access token for an onboarded integrator client. The following
 headers must be set:
