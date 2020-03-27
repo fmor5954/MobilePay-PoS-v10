@@ -17,8 +17,8 @@ Cases in which knowing the customer before setting the amount includes loyalty p
 ## Specify planned capture delay
 It is required to specify when the payment is expected to be captured. The values are either *None*, *LessThan24Hours*, and *LessThan14Days*. These are values that control how payments are handled by MobilePay Support and it is therefore beneficial that these values are set as accurate as possible.
 The three values differ in the following way:
-* **None**: If reservations with this value are not captured **the following day** it is possible for MobilePay Support to reach out to make sure the reservervations are handled (either cancelled or captured) although this is not guaranteed.
-* **LessThan24Hours**: If reservations with this value are not captured **the following 2-3 days** it is possible for MobilePay Support to reach out to make sure the reservervations are handled (either cancelled or captured) although this is not guaranteed.
+* **None**: If reservations with this value are not captured **the following day** it is possible for MobilePay Support to reach out to make sure the reservations are handled (either cancelled or captured) although this is not guaranteed.
+* **LessThan24Hours**: If reservations with this value are not captured **the following 2-3 days** it is possible for MobilePay Support to reach out to make sure the reservations are handled (either cancelled or captured) although this is not guaranteed.
 * **LessThan14Days**: If reservations with this value are not captured MobilePay Support cannot help since the reservation will be expired and, hence, cannot be captured. Make sure this value is only used when appropriate.
 
 ## Order IDs
