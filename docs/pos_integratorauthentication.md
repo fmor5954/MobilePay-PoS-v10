@@ -52,7 +52,7 @@ In addition, the `grant_type` parameter must be set and a `merchant_vat` paramet
 | Parameter | Value  | Description  |
 | :---         |     :---:      | :---  |
 | `grant_type` | client_credentials | The Client Credentials grant type is used by clients to obtain an `access_token` outside of the context of a user.     |
-| `merchant_vat` | DK12345678 or FI12345678 | VAT number of the merchant the integrator client is calling on behalf of. The PoS V10 API supports FI and DK VAT numbers. The VAT number consists of country prefix (either FI or DK) and 8 digits. |
+| `merchant_vat` | DK12345678 or FI12345678 | VAT number of the merchant the integrator client is calling on behalf of. The VAT number consists of country prefix (either FI or DK) and 8 digits. |
 
 If the `merchant_vat` parameter is supplied, the VAT number will be added as a claim on the access token, and it will only be possible to use the access token to perform calls on behalf of the given merchant. If it is not supplied, the access token will not be restricted to a fixed merchant. Instead, clients will have to include a header on all calls to the PoS V10 API that includes the VAT number of the merchant the client is acting on behalf of, for the given call. 
 
