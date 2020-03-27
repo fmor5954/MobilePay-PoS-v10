@@ -1,7 +1,7 @@
 
 The MobilePay PoS V10 API uses TLS for communication security and data integrity (secure channel between the client and the backend) and uses access tokens to authenticate clients. The guide below describe the steps to onboard an client and generate access tokens to authenticate the client. 
 
-# **Steps to Onboard a PoS client**
+# **Onboarding a PoS client**
 
 1. **Read API documentation.** You'll find it in the  [APIs menu](https://developer.mobilepay.dk/product).  
 
@@ -15,30 +15,23 @@ The MobilePay PoS V10 API uses TLS for communication security and data integrity
 -  Integrator Authentication 
  
  5.  **Receive OAuth Client Credentials via zip file.** The Client Credentials will be used when calling the token endpoint (described below) to generate an access token. The zip file will be sent via e-mail. The zip file is locked with a password. DeveloperSupport will provide the password via text message to ensure the password protected file and the password is not transmitted together.
- 
+
 Now you are ready to move on to the authentication section below.  
 
 # **Integrator Authentication:**
 
-In order for Integrators to be able to use MobilePay APIs, first they'll have to obtain an `access_token` from the Integrator Authentication service. This way, MobilePay knows who is calling our service. 
-
-  **Environments:**
-The following URL are the environment routes for the Integrator Authentication API
-
- - SandBox: `https://api.sandbox.mobilepay.dk/integrator-authentication`
- - Production: `https://api.mobilepay.dk/integrator-authentication`
+The PoS V10 API uses access tokens to authenticate calls from clients. In order for a client to use the PoS V10 API, it must first obtain an access token using the Integrator Authentication API. The access tokens used in the PoS V10 solution identifies both a client and the integrator that developed the client and optionally the merchant on which the client is calling on behalf of. 
 
 ### **Credentials Flow:**
 
-The Integrator Authentication solution is based on the OpenID/OAuth 2.0 specification. By following the OpenID Connect protocol, MobilePay makes it easy for integrators to integrate with MobilePay. Currently, the  flow supported is the Client Credentials grant type. Credentials Flow (defined in OAuth 2.0 RFC 6749, section 4.4), in which Integrators pass along their `client_id` and `client_secret` to authenticate themselves and get a token.
+The Integrator Authentication solution is based on the OpenID/OAuth 2.0 specification. By following the OpenID Connect protocol, MobilePay makes it easy for integrators to integrate with MobilePay. Currently, the flow supported is the Client Credentials grant type. In the Credentials Flow (defined in OAuth 2.0 RFC 6749, section 4.4), Integrators pass along their `client_id` and `client_secret` (received in Step 5 above) to authenticate themselves and obtain an access token.
 
 [![](assets/images/clientcredentialsdiagram.png)](assets/images/possekvensdiagram.png)
 
-
- 1. The client app authenticates with the Authorization Server using its Client ID and Client Secret /token endpoint
+ 1. The client app authenticates with the Authorization Server using its Client ID and Client Secret using the token endpoint.
  2. The Authorization Server validates the `client_id` and `client_secret`.
  3. The Authorization Server responds with an `access_token`.
- 4. The Client application can use the `access_token` to call the API
+ 4. The Client application can use the `access_token` to call the PoS V10 API.
  5. The API responds with requested data.
 
 [![](assets/images/possekvensdiagram.png)](assets/images/possekvensdiagram.png)
@@ -47,7 +40,6 @@ The Integrator Authentication solution is based on the OpenID/OAuth 2.0 specific
 
 This document does not include a compete specification of the endpoints, responses and response codes. This information can be found in the [APIs section](https://developer.mobilepay.dk/product) of the Developer Portal.
  
-
 ## `POST /connect/token`
 
 The token endpoint is used when requesting an `access token` for an onboarded integrator client.
@@ -56,9 +48,9 @@ Headers:
 
  - **``Content-Type``**: x-www-urlencoded
  - **``x-ibm-client-id``**: Client_Id supplied upon certification.
- - **``Authorization``**: Basic ({CLIENT_ID}:{CLIENT_SECRET}).toBase64EncodedString().
+ - **``Authorization``**: Basic ({client_id}:{client_secret}).toBase64EncodedString().
 
-The OAuth `client_id`and `client_secret` will be sent to the integrator in a closed zip file from [developer@mobilepay.dk](mailto:developer@mobilepay.dk) to integrators e-mail 
+The OAuth `client_id`and `client_secret` will be sent to the integrator in a closed zip file from [developer@mobilepay.dk](mailto:developer@mobilepay.dk) to integrators e-mail
 
  
 | Parameter | Value  | Description  |
@@ -66,9 +58,7 @@ The OAuth `client_id`and `client_secret` will be sent to the integrator in a clo
 | grant_type    | client_credentials     | The Client Credentials grant type is used by clients to obtain an `access_token` outside of the context of a user.     |
 | merchant_vat     | DK12345678 or FI12345678       | VAT Number of the Merchant the integrator is integrating on behalf. It will be applied to the JWT access token, if supplied. The PoS V10 API supports FI and DK VAT numbers. The VAT number consists of country prefix (either FI or DK) and 8 digits.      |
 
-Example of response body from SandProd environment:
-
-Response Body
+Example of response body from SandBox environment:
 
 ```
 {
@@ -84,7 +74,7 @@ Response Body
 You might encounter the following status codes :
 
 * `200 - OK`  
-* `401 - Unauthorized` , if the client is not authorized/authenticated through the API Gateway
+* `401 - Unauthorized` if the client is not authorized/authenticated through the API Gateway
 
 
 ### cURL example:
@@ -97,3 +87,9 @@ curl --location --request POST 'https://api.sandbox.mobilepay.dk/integrator-auth
 --data-urlencode 'grant_type=client_credentials' \
 --data-urlencode 'merchant_vat=DK12345678'
 ```
+
+ **Environments:**
+The following URL are the environment routes for the Integrator Authentication API
+
+ - SandBox: `https://api.sandbox.mobilepay.dk/integrator-authentication`
+ - Production: `https://api.mobilepay.dk/integrator-authentication`
