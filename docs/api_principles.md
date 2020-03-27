@@ -36,7 +36,7 @@ Creating an app in MobilePay Developer Portal will create a client ID that shoul
 
 ## <a name="client_identification"></a> Client Identification
 
-All calls to the MobilePay PoS V10 API must include the following two headers `X-MobilePay-Client-System-Name` and
+All calls to the MobilePay PoS V10 API must include the following two headers `x-mobilepay-client-system-name` and
 `x-mobilepay-client-system-version` to identify the client system and verify that the given system has been [certified](api_principles#self_certification).
 The Client Name (`x-mobilepay-client-system-name`) is a suitable name used for the 
 client, preferably the name that the integrator uses in their own communication. This way support communication 
