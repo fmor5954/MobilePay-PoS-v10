@@ -1,7 +1,7 @@
 
 The MobilePay PoS V10 API uses TLS for communication security and data integrity (secure channel between the client and the backend) and uses access tokens to authenticate integrator clients. The guide below describe the steps to onboard an integrator client and generate access tokens to authenticate the integrator client. 
 
-# **Onboarding a PoS integrator client**
+# <a name="client_onboarding"></a>**Onboarding a PoS integrator client**
 
 1. **Read API documentation.** You'll find it in the  [APIs menu](https://developer.mobilepay.dk/product).  
 
@@ -38,21 +38,23 @@ The Integrator Authentication solution is based on the OpenID/OAuth 2.0 specific
 
 This document only describes the token endpoint used to request an access token. A complete specification of the endpoints, responses and response codes for the Integrator Authentication API can be found in the [APIs section](https://developer.mobilepay.dk/product) of the Developer Portal.
  
-The token endpoint (`POST /connect/token`) is used when requesting an access token for an onboarded integrator client.
-
-Headers:
+The token endpoint (`POST /connect/token`) is used when requesting an access token for an onboarded integrator client. The following
+headers must be set:
 
  - **``Content-Type``**: x-www-urlencoded
- - **``x-ibm-client-id``**: Client_Id supplied upon certification.
- - **``Authorization``**: Basic ({client_id}:{client_secret}).toBase64EncodedString().
+ - **``x-ibm-client-id``**: `client_id`
+ - **``Authorization``**: Basic (`client_id`:`client_secret`).toBase64EncodedString().
 
-The OAuth `client_id`and `client_secret` will be sent to the integrator in a closed zip file from [developer@mobilepay.dk](mailto:developer@mobilepay.dk) to integrators e-mail
+The OAuth `client_id`and `client_secret` will be sent to the integrator in a closed zip file from [developer@mobilepay.dk](mailto:developer@mobilepay.dk) to integrators e-mail (step 5 in the [Client onboarding guide](pos_integratorauthentication#client_onboarding).
 
+In addition, the `grant_type` must be set and a `merchant_vat` parameter may optionally be set as described below:
  
 | Parameter | Value  | Description  |
 | :---         |     :---:      |          :---:  |
-| grant_type    | client_credentials     | The Client Credentials grant type is used by clients to obtain an `access_token` outside of the context of a user.     |
-| merchant_vat     | DK12345678 or FI12345678       | VAT Number of the Merchant the integrator is integrating on behalf. It will be applied to the JWT access token, if supplied. The PoS V10 API supports FI and DK VAT numbers. The VAT number consists of country prefix (either FI or DK) and 8 digits.      |
+| `grant_type` | client_credentials | The Client Credentials grant type is used by clients to obtain an `access_token` outside of the context of a user.     |
+| `merchant_vat` | DK12345678 or FI12345678 | VAT number of the merchant the integrator client is calling on behalf of. The PoS V10 API supports FI and DK VAT numbers. The VAT number consists of country prefix (either FI or DK) and 8 digits. |
+
+If the `merchant_vat` parameter is supplied, the VAT number will be added as a claim on the access token, and it will only be possible to use the access token to perform calls on behalf of the given merchant. If it is not supplied, the access token will not be restricted to a fixed merchant. Instead, clients will have to include a header on all calls to the PoS V10 API that includes the VAT number of the merchant the client is acting on behalf of, for the given call. 
 
 Example of response body from SandBox environment:
 ```
