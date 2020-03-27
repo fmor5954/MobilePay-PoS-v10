@@ -1,7 +1,7 @@
 
-The MobilePay PoS V10 API uses TLS for communication security and data integrity (secure channel between the client and the backend) and uses access tokens to authenticate clients. The guide below describe the steps to onboard an client and generate access tokens to authenticate the client. 
+The MobilePay PoS V10 API uses TLS for communication security and data integrity (secure channel between the client and the backend) and uses access tokens to authenticate integrator clients. The guide below describe the steps to onboard an integrator client and generate access tokens to authenticate the integrator client. 
 
-# **Onboarding a PoS client**
+# **Onboarding a PoS integrator client**
 
 1. **Read API documentation.** You'll find it in the  [APIs menu](https://developer.mobilepay.dk/product).  
 
@@ -20,11 +20,11 @@ Now you are ready to move on to the authentication section below.
 
 # **Integrator Authentication:**
 
-The PoS V10 API uses access tokens to authenticate calls from clients. In order for a client to use the PoS V10 API, it must first obtain an access token using the Integrator Authentication API. The access tokens used in the PoS V10 solution identifies both a client and the integrator that developed the client and optionally the merchant on which the client is calling on behalf of. 
+The PoS V10 API uses access tokens to authenticate calls from integrator clients. In order for an integrator client to use the PoS V10 API, it must first obtain an access token using the Integrator Authentication API. The access tokens used in the PoS V10 solution identifies both an integrator client and the integrator and may optionally identify the merchant on which the client is calling on behalf of. 
 
 ### **Credentials Flow:**
 
-The Integrator Authentication solution is based on the OpenID/OAuth 2.0 specification. By following the OpenID Connect protocol, MobilePay makes it easy for integrators to integrate with MobilePay. Currently, the flow supported is the Client Credentials grant type. In the Credentials Flow (defined in OAuth 2.0 RFC 6749, section 4.4), Integrators pass along their `client_id` and `client_secret` (received in Step 5 above) to authenticate themselves and obtain an access token.
+The Integrator Authentication solution is based on the OpenID/OAuth 2.0 specification. By following the OpenID Connect protocol, MobilePay makes it easy for integrators to integrate with MobilePay. Currently, the flow supported is the Client Credentials grant type. In the Credentials Flow (defined in OAuth 2.0 RFC 6749, section 4.4), integrators pass along their `client_id` and `client_secret` (received in Step 5 above) to authenticate themselves and obtain an access token.
 
 [![](assets/images/clientcredentialsdiagram.png)](assets/images/possekvensdiagram.png)
 
@@ -36,13 +36,11 @@ The Integrator Authentication solution is based on the OpenID/OAuth 2.0 specific
 
 [![](assets/images/possekvensdiagram.png)](assets/images/possekvensdiagram.png)
 
-# **Endpoint description:**
+# **Obtaining an access token:**
 
-This document does not include a compete specification of the endpoints, responses and response codes. This information can be found in the [APIs section](https://developer.mobilepay.dk/product) of the Developer Portal.
+This document only describes the token endpoint used to request an access token. A complete specification of the endpoints, responses and response codes for the Integrator Authentication API can be found in the [APIs section](https://developer.mobilepay.dk/product) of the Developer Portal.
  
-## `POST /connect/token`
-
-The token endpoint is used when requesting an `access token` for an onboarded integrator client.
+The token endpoint (`POST /connect/token`) is used when requesting an access token for an onboarded integrator client.
 
 Headers:
 
@@ -59,7 +57,6 @@ The OAuth `client_id`and `client_secret` will be sent to the integrator in a clo
 | merchant_vat     | DK12345678 or FI12345678       | VAT Number of the Merchant the integrator is integrating on behalf. It will be applied to the JWT access token, if supplied. The PoS V10 API supports FI and DK VAT numbers. The VAT number consists of country prefix (either FI or DK) and 8 digits.      |
 
 Example of response body from SandBox environment:
-
 ```
 {
     "access_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c",
@@ -75,7 +72,6 @@ You might encounter the following status codes :
 
 * `200 - OK`  
 * `401 - Unauthorized` if the client is not authorized/authenticated through the API Gateway
-
 
 ### cURL example:
 
