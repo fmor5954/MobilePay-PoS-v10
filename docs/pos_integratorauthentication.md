@@ -24,15 +24,15 @@ The PoS V10 API uses access tokens to authenticate calls from integrator clients
 
 ### **Credentials Flow:**
 
-The Integrator Authentication solution is based on the OpenID/OAuth 2.0 specification. By following the OpenID Connect protocol, MobilePay makes it easy for integrators to integrate with MobilePay. Currently, the flow supported is the Client Credentials grant type. In the Credentials Flow (defined in OAuth 2.0 RFC 6749, section 4.4), integrators pass along their `client_id` and `client_secret` (received in Step 5 above) to authenticate themselves and obtain an access token.
+The Integrator Authentication solution is based on the OpenID/OAuth 2.0 specification. By following the OpenID Connect protocol, MobilePay makes it easy for integrators to integrate with MobilePay. Currently, the flow supported is the Client Credentials grant type. In the Credentials Flow (defined in OAuth 2.0 RFC 6749, section 4.4), integrators pass along their `client_id` and `client_secret` (received in Step 5 above) to authenticate themselves and obtain an access token. The Credentials Flow is illustrated in the diagram below.
 
 [![](assets/images/clientcredentialsdiagram.png)](assets/images/possekvensdiagram.png)
 
- 1. The client app authenticates with the Authorization Server using its Client ID and Client Secret using the token endpoint.
+ 1. The client app authenticates with the Authorization Server using its `client_id` and `client_secret` using the token endpoint.
  2. The Authorization Server validates the `client_id` and `client_secret`.
  3. The Authorization Server responds with an `access_token`.
  4. The Client application can use the `access_token` to call the PoS V10 API.
- 5. The API responds with requested data.
+ 5. The PoS V10 API responds.
 
 [![](assets/images/possekvensdiagram.png)](assets/images/possekvensdiagram.png)
 
