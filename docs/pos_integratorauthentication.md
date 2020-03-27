@@ -3,11 +3,11 @@ The MobilePay PoS V10 API uses TLS for communication security and data integrity
 
 # <a name="client_onboarding"></a>**Onboarding a PoS integrator client**
 
-1. **Read API documentation.** You'll find it in the  [APIs menu](https://developer.mobilepay.dk/product).  
+1. **Read API documentation.** You will find it in the  [APIs menu](https://developer.mobilepay.dk/product).  
 
 2.  **Log-in on the developer portal.** Go to [Sandbox developer portal](https://sandbox-developer.mobilepay.dk/) and log in with your credentials.
 
- 3.  **Create an app in the developer portal.** - My Apps > Create new App to register a new application.   You need to supply the `x-ibm-client-id`  when calling the API. You should always store the `x-ibm-client-id` in a secure location, and never reveal it publicly.  More details about the usage of `x-ibm-client-id` below in the authentication section. 
+ 3.  **Create an app in the developer portal.** Go to My Apps > Create new App to register a new application. You need to supply the `x-ibm-client-id` when calling APIs. You should always store the `x-ibm-client-id` in a secure location, and never reveal it publicly.  More details about the usage of `x-ibm-client-id` below in the authentication section. 
 
 4.  **Subscribe the app to APIs.**  Go to [APIs](https://sandbox-developer.mobilepay.dk/product) and subscribe to the following APIs:
 -  PoS for Integrators  
