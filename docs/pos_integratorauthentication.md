@@ -85,7 +85,7 @@ curl --location --request POST 'https://api.sandbox.mobilepay.dk/integrator-auth
 ```
 
  **Environments:**
-The following URL are the environment routes for the Integrator Authentication API
+The following URLs are the environment routes for the Integrator Authentication API
 
  - SandBox: `https://api.sandbox.mobilepay.dk/integrator-authentication`
  - Production: `https://api.mobilepay.dk/integrator-authentication`
