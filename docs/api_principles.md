@@ -31,7 +31,8 @@ an access token](pos_integratorauthentication), the client must send the access 
 ## <a name="client_versioning"></a> Client Versioning
 
 In addition to the access token which identifies the client calling the MobilePay PoS V10 API, all calls must also
-include the `x-mobilepay-client-system-version` header to identify the version of the client software and verifythat the given system has been [certified](self_certification).
+include the `x-mobilepay-client-system-version` header to identify the version of the client software, which will
+be used to verify that the given system has been [certified](self_certification).
 The Client Version (`x-mobilepay-client-system-version`) is a 3 dimensional number Major.Minor.Build. It 
 is recommended that when the client software is updated, the client version is updated accordingly. 
 The client version will be used by MobilePay to block versions of clients that are not certified 
