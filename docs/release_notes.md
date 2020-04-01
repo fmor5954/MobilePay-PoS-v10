@@ -6,6 +6,12 @@ The Point of Sale API V10 will be in production **Q2 2020**. It will be released
 
 ### 2020-03-27
 
+- Added 403 in the API Errors section as a possible non-successful status-code when creating a Point of Sale.
+
+---
+
+### 2020-03-27
+
 - Dropped the `x-ibm-client-system-name` header and modified the [API principles](api_principles) page to explain how the `x-ibm-client-system-version` header will be used for client versioning.
 
 - Renamed all `X-IBM-*` and `X-MobilePay-*` headers to be lowercase in the documentation (the actual headers are case-insensitive).
