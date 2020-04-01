@@ -4,7 +4,7 @@ The Point of Sale API V10 will be in production **Q2 2020**. It will be released
 
 ## Changelog
 
-### 2020-03-27
+### 2020-04-01
 
 - Added 403 in the API Errors section as a possible non-successful status-code when creating a Point of Sale.
 
