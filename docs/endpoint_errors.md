@@ -126,6 +126,7 @@ This page contains information regarding all the non-successful status-codes and
 | StatusCode | ErrorCodes  | Description |
 |------------|-------------|-------------|
 | 400 | 1100`` `` <br> 1111`` `` <br> 1112`` `` <br> 1116`` `` <br> 1118`` `` <br> 1162`` `` <br> 1163`` `` <br> 1164`` `` | Invalid ``BeaconId`` <br> Invalid ``MerchantPosId`` <br> Invalid ``PosName`` <br> Invalid ``CallbackAlias`` <br> Invalid ``CalibrationType`` <br> Invalid ``Idempotency-Key`` <br> Duplicated ``Idempotency-Key`` header <br> Missing ``Idempotency-Key`` header |
+| 403 | 1403 | Cannot create point of sale on store that does not belong to the merchant |
 | 409 | 1002 <br> 1200`` `` <br> 1202`` `` <br> 1306`` `` <br> </p> | Store not found <br> A point of sale with that ``MerchantPosId`` already exist <br> A point of sale with that ``BeaconId`` already exist <br> ``Idempotency-Key`` has to be unique per request unless the request is a retry of a previous request |
 
 </details><br>
