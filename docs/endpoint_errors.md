@@ -7,7 +7,7 @@ This page contains information regarding all the non-successful status-codes and
 
 | StatusCode | ErrorCodes  | Description |
 |------------|-------------|-------------|
-| 400 | 1099 <br> 1151`` `` <br> 1152`` `` <br> 1153`` `` <br> 1155`` `` <br> 1156`` `` <br> 1157`` `` <br> 1159`` `` <br> 1160`` `` <br> 1161`` `` | Unknown BadRequest error <br> Missing ``Merchant-VAT-Number`` header <br> Missing ``Client-System-Name`` header <br> Missing ``Client-System-Version`` header <br> Duplicated ``Merchant-VAT-Number`` header <br> Duplicated ``Client-System-Name`` header <br> Duplicated ``Client-System-Version`` header <br> Invalid ``Merchant-VAT-Number`` <br> Invalid ``Client-System-Name`` <br> Invalid ``Client-System-Version`` |
+| 400 | 1099 <br> 1151`` `` <br> 1152`` `` <br> 1153`` `` <br> 1155`` `` <br> 1156`` `` <br> 1157`` `` <br> 1159`` `` <br> 1160`` `` <br> 1161`` `` | Unknown BadRequest error <br> Missing ``x-mobilepay-merchant-vat-number`` header <br> Missing ``x-mobilepay-client-system-name`` header <br> Missing ``x-mobilepay-client-system-version`` header <br> Duplicated ``x-mobilepay-merchant-vat-number`` header <br> Duplicated ``x-mobilepay-client-system-name`` header <br> Duplicated ``x-mobilepay-client-system-version`` header <br> Invalid ``x-mobilepay-merchant-vat-number`` header <br> Invalid ``x-mobilepay-client-system-name`` header <br> Invalid ``x-mobilepay-client-system-version`` header|
 | 401 | - | Unauthorized |
 | 500 | 2000 - 2999 | Internal server error - Please attach error code when communicating with MobilePay for quicker support |
 
@@ -38,9 +38,9 @@ This page contains information regarding all the non-successful status-codes and
 
 | StatusCode | ErrorCodes  | Description |
 |------------|-------------|-------------|
-| 400 | 1102`` `` <br> 1105`` `` <br> 1113`` `` <br> 1117`` `` <br> 1162`` `` <br> 1163`` `` <br> 1164`` `` | Invalid ``Amount`` <br> Invalid ``UserMinimumAge`` <br> Invalid ``OrderId`` <br> Invalid ``MerchantPaymentLabel`` <br> Invalid ``Idempotency-Key`` <br> Duplicated ``Idempotency-Key`` header <br> Missing ``Idempotency-Key`` header |
+| 400 | 1102`` `` <br> 1105`` `` <br> 1113`` `` <br> 1117`` `` <br> 1162`` `` <br> 1163`` `` <br> 1164`` `` | Invalid ``Amount`` <br> Invalid ``UserMinimumAge`` <br> Invalid ``OrderId`` <br> Invalid ``MerchantPaymentLabel`` <br> Invalid ``x-mobilepay-idempotency-key`` header <br> Duplicated ``x-mobilepay-idempotency-key`` header <br> Missing ``x-mobilepay-idempotency-key`` header |
 | 403 | 1400 | Cannot initiate payments on a point of sale created by a different integrator |
-| 409 | 1000 <br> 1301 <br> 1306`` `` <br> </p> | Point of Sale not found <br> A payment is already active. Cancel it before starting a new one <br> ``Idempotency-Key`` has to be unique per request unless the request is a retry of a previous request <br>  |
+| 409 | 1000 <br> 1301 <br> 1306`` `` <br> </p> | Point of Sale not found <br> A payment is already active. Cancel it before starting a new one <br> ``x-mobilepay-idempotency-key`` header has to be unique per request unless the request is a retry of a previous request <br>  |
 
 </details><br>
 
@@ -49,9 +49,9 @@ This page contains information regarding all the non-successful status-codes and
 
 | StatusCode | ErrorCodes  | Description |
 |------------|-------------|-------------|
-| 400 | 1113`` `` <br> 1162`` `` <br> 1163`` `` <br> 1164`` `` | Invalid ``OrderId`` <br> Invalid ``Idempotency-Key`` <br> Duplicated ``Idempotency-Key`` header <br> Missing ``Idempotency-Key`` header |
+| 400 | 1113`` `` <br> 1162`` `` <br> 1163`` `` <br> 1164`` `` | Invalid ``OrderId`` <br> Invalid ``x-mobilepay-idempotency-key`` header <br> Duplicated ``x-mobilepay-idempotency-key`` header <br> Missing ``x-mobilepay-idempotency-key`` header |
 | 403 | 1400 | Cannot prepare payments on a point of sale created by a different integrator |
-| 409 | 1000 <br> 1301 <br> 1306`` `` <br> </p> | Point of sale not found <br> A payment is already active. Cancel it before starting a new one <br> ``Idempotency-Key`` has to be unique per request unless the request is a retry of a previous request |
+| 409 | 1000 <br> 1301 <br> 1306`` `` <br> </p> | Point of sale not found <br> A payment is already active. Cancel it before starting a new one <br> ``x-mobilepay-idempotency-key`` header has to be unique per request unless the request is a retry of a previous request |
 
 </details><br>
 
@@ -75,7 +75,7 @@ This page contains information regarding all the non-successful status-codes and
 | 400 | 1102`` `` | Invalid ``Amount`` |
 | 403 | 1401 | Cannot capture payments created by a different integrator |
 | 404 | - | Payment not found |
-| 409 | 1304 <br> 1305`` `` | Cannot capture payment when payment is not reserved <br> Capture ``Amount`` cannot exceed the reserved amount |
+| 409 | 1304 <br> 1305 <br> 1307`` `` | Cannot capture payment when payment is not reserved <br> Capture ``Amount`` cannot exceed the reserved amount <br> Payment has already been captured with a different amount |
 
 </details><br>
 
@@ -125,8 +125,9 @@ This page contains information regarding all the non-successful status-codes and
 
 | StatusCode | ErrorCodes  | Description |
 |------------|-------------|-------------|
-| 400 | 1100`` `` <br> 1111`` `` <br> 1112`` `` <br> 1116`` `` <br> 1118`` `` <br> 1162`` `` <br> 1163`` `` <br> 1164`` `` | Invalid ``BeaconId`` <br> Invalid ``MerchantPosId`` <br> Invalid ``PosName`` <br> Invalid ``CallbackAlias`` <br> Invalid ``CalibrationType`` <br> Invalid ``Idempotency-Key`` <br> Duplicated ``Idempotency-Key`` header <br> Missing ``Idempotency-Key`` header |
-| 409 | 1002 <br> 1200`` `` <br> 1202`` `` <br> 1306`` `` <br> </p> | Store not found <br> A point of sale with that ``MerchantPosId`` already exist <br> A point of sale with that ``BeaconId`` already exist <br> ``Idempotency-Key`` has to be unique per request unless the request is a retry of a previous request |
+| 400 | 1100`` `` <br> 1111`` `` <br> 1112`` `` <br> 1116`` `` <br> 1118`` `` <br> 1162`` `` <br> 1163`` `` <br> 1164`` `` | Invalid ``BeaconId`` <br> Invalid ``MerchantPosId`` <br> Invalid ``PosName`` <br> Invalid ``CallbackAlias`` <br> Invalid ``CalibrationType`` <br> Invalid ``x-mobilepay-idempotency-key`` header <br> Duplicated ``x-mobilepay-idempotency-key`` header <br> Missing ``x-mobilepay-idempotency-key`` header |
+| 403 | 1403 | Cannot create point of sale on store that does not belong to the merchant |
+| 409 | 1002 <br> 1200`` `` <br> 1202`` `` <br> 1306`` `` <br> </p> | Store not found <br> A point of sale with that ``MerchantPosId`` already exist <br> A point of sale with that ``BeaconId`` already exist <br> ``x-mobilepay-idempotency-key`` header has to be unique per request unless the request is a retry of a previous request |
 
 </details><br>
 
@@ -165,9 +166,9 @@ This page contains information regarding all the non-successful status-codes and
 
 | StatusCode | ErrorCodes  | Description |
 |------------|-------------|-------------|
-| 400 | 1102`` `` <br> 1114`` `` <br> 1162`` `` <br> 1163`` `` <br> 1164`` `` | Invalid ``Amount`` <br> Invalid ``RefundOrderId`` <br> Invalid ``Idempotency-Key`` <br> Duplicated ``Idempotency-Key`` header <br> Missing ``Idempotency-Key`` header |
+| 400 | 1102`` `` <br> 1114`` `` <br> 1162`` `` <br> 1163`` `` <br> 1164`` `` | Invalid ``Amount`` <br> Invalid ``RefundOrderId`` <br> Invalid ``x-mobilepay-idempotency-key`` header <br> Duplicated ``x-mobilepay-idempotency-key`` header <br> Missing ``x-mobilepay-idempotency-key`` header |
 | 403 | 1401 | Cannot refund payments created by a different integrator |
-| 409 | 1001 <br> 1306`` `` <br> <br> 1354 | Payment not found <br> ``Idempotency-Key`` has to be unique per request unless the request is a retry of a previous request <br> Refund of payment not possible when payment is not captured |
+| 409 | 1001 <br> 1306`` `` <br> <br> 1354 | Payment not found <br> ``x-mobilepay-idempotency-key`` header has to be unique per request unless the request is a retry of a previous request <br> Refund of payment not possible when payment is not captured |
 
 </details><br>
 
