@@ -33,6 +33,9 @@ The Integrator Authentication solution is based on the OpenID/OAuth 2.0 specific
  3. The Authorization Server responds with an `access_token`.
  4. The Client application can use the `access_token` to call the PoS V10 API.
  5. The PoS V10 API responds.
+ 
+ > NOTE: Oauth2 client secrets should not be stored in a way, where they can be accessed by someone from outside the integrator organisation.
+> Instead of storing secrets on a merchant owned/operated device it is possible to ask MobilePay to enable long lived access tokens, that can be configured on said devices.
 
 # **Obtaining an access token:**
 
