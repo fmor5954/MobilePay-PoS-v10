@@ -4,6 +4,11 @@ The Point of Sale API V10 will be in production **Q2 2020**. It will be released
 
 ## Changelog
 
+### 2020-05-13
+
+- Added a note on partial capture handling in [Best Practices](best_practices)
+
+---
 ### 2020-04-28
 
 - Added a note on the possibility of long-lived access tokens for PoS devices
