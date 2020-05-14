@@ -8,6 +8,7 @@ This page contains information regarding all the non-successful status-codes and
 | StatusCode | ErrorCodes  | Description |
 |------------|-------------|-------------|
 | 400 | 1099 <br> 1151`` `` <br> 1152`` `` <br> 1153`` `` <br> 1155`` `` <br> 1156`` `` <br> 1157`` `` <br> 1159`` `` <br> 1160`` `` <br> 1161`` `` <br> 1182`` ``| Unknown BadRequest error <br> Missing ``x-mobilepay-merchant-vat-number`` header <br> Missing ``x-mobilepay-client-system-name`` header <br> Missing ``x-mobilepay-client-system-version`` header <br> Duplicated ``x-mobilepay-merchant-vat-number`` header <br> Duplicated ``x-mobilepay-client-system-name`` header <br> Duplicated ``x-mobilepay-client-system-version`` header <br> Invalid ``x-mobilepay-merchant-vat-number`` header <br> Invalid ``x-mobilepay-client-system-name`` header <br> Invalid ``x-mobilepay-client-system-version`` header <br> Invalid ``merchant_vat`` claim in access token|
+
 | 401 | - | Unauthorized |
 | 500 | 2000 - 2999 | Internal server error - Please attach error code when communicating with MobilePay for quicker support |
 
