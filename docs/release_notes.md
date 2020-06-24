@@ -4,10 +4,16 @@ The Point of Sale API V10 will be in production **Q2 2020**. It will be released
 
 ## Changelog
 
+### 2020-06-24
+
+- Updated description and added configuration details in [Self Certification](self_certification)
+
+---
 ### 2020-05-14
 
 - Added error 1182 in [API ERRORS](endpoint_errors)
 
+---
 ### 2020-05-13
 
 - Added a note on partial capture handling in [Best Practices](best_practices)
