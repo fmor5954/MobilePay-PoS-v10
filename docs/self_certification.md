@@ -38,6 +38,8 @@ In the Fourth and final step the Integrator gets a certificate proving the that 
 
 In general we urge all integrators to use this tool to do continuous testing - it is a requirement to certify when upgrading Major or Minor versions, it is recommended to use the tool when making new build versions as well. The tool will never retract a certification to a client version it has already certified. Retraction of a certification will only be done after a individual evaluation by MobilePay based on input from production.
 
+[![](assets/images/approvalstep.PNG)](assets/images/approvalstepstep.PNG)
+
 ## Configuration details
 Please use the following data for configuring your client before commencing self certification.
 
