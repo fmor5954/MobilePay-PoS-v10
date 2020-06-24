@@ -11,7 +11,7 @@ The Self Certification process has four steps: Identification, Selection, Certif
 
 ## Identification Step
 In the first step the Integrator identifies themselves in the tool. The following information is needed:
-* Integrator IDs for Sandproduction and Production - ID received from MobilePay per mail, which identifies the Integrator organisation itself. Each Integrator should only have one Integrator ID for each environment sandproduction and production.
+* Integrator IDs for Sandproduction and Production - ID received from MobilePay per mail, which identifies the Integrator organisation itself. Each Integrator should only have one Integrator ID for sandproduction and one Integrator ID for production.
 * Client IDs for Sandproduction and Production - ID created on the MobilePay Developer Portal which identifies the client to be certified. Each Integrator is allowed to create multiple Client IDs, however it is also acceptable to have just one Client ID.
 * Version numbering - The three dimensional number that defines the version of the Client that needs to be certified. See [Client Identification](api_principles#client_identification)
 * Client system name - the name of the software being certified.
@@ -20,7 +20,7 @@ In the first step the Integrator identifies themselves in the tool. The followin
 
 ## Selection Step
 In the second step the Integrator selects which major features to certify. There are the following major features in MobilePay PoS API v10:
-* Onboarding - The neccesary proces of creating a Point-of-Sale on the MobilePay backend.
+* Onboarding - The mandatory proces of creating a Point-of-Sale on the MobilePay backend.
 * Payments - Certification in sections of the API neccesary for doing a simple payment.
 * Prepared Payments - Certification in sections of the API neccesary for doing a prepared payment.
 * Payments With Restrictions - Certification in sections of the API neccesary for handling restrictions to payments.
