@@ -19,7 +19,7 @@ Currently MobilePay PoS uses BLE one-way and two-way beacons and QR-codes to set
 
 ## The MobilePay Developer Portal
 The MobilePay Developer Portal is a site where you will be able to find information about the products and available APIs and their documentations.
-It exposes live documentation that can be used for development. How to get access to the Developer Portal is described [here](https://developer.mobilepay.dk/products/pos10).
+It exposes live documentation that can be used for development. How to get access to the Developer Portal is described [here](https://developer.mobilepay.dk/products/point-of-sale/getstarted).
 
 The MobilePay Developer Portal is available at the following addresses:
 
