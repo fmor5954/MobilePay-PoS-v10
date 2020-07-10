@@ -4,6 +4,11 @@ The Point of Sale API V10 will be in production **Q2 2020**. It will be released
 
 ## Changelog
 
+### 2020-07-10
+
+- Clarify handling timeout for POST/DELETE/PUT in [API principles](api_principles)
+
+---
 ### 2020-06-29
 
 - Updated payment lifetime in [Payment Flow](payment_flows#payment_flow)
