@@ -149,7 +149,7 @@ resource to fix any inconsistencies between the client and the PoS backend.
 
 ### Handling Timeouts
 
-For requests that are slow to produce responses, you have to set a timeout on the request using one of the following rules:
+For requests that are slow to produce responses, the client have to set a timeout on the request using one of the following rules:
 * For POST, DELETE, PUT requests set the timeout to 2 seconds using a suitable retry strategy from section [Retrying requests](api_principles#retrying_requests). Remember to use the idempotency key for the POST requests that create a ressource.
 * For non-polling GET requests set the timeout to 0.5 seconds using a suitable retry strategy from section [Retrying requests](api_principles#retrying_requests)
 * For polling GET requests set the timeout to 0.5 seconds and continue polling using the polling delay from the last received response.
