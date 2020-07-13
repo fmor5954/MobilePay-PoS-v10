@@ -4,6 +4,11 @@ The Point of Sale API V10 will be in production **Q2 2020**. It will be released
 
 ## Changelog
 
+### 2020-07-13
+
+- Added a 403 error code for payments/{payid}/capture in [API ERRORS](endpoint_errors) which is returned when trying to make a partial capture which is still not supported. When it will be possible to do partial captures it will be listed here in the release notes.
+
+---
 ### 2020-07-10
 
 - Clarify handling timeout for POST/DELETE/PUT in [API principles](api_principles#error_handling)
