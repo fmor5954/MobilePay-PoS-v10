@@ -73,7 +73,7 @@ This page contains information regarding all the non-successful status-codes and
 | StatusCode | ErrorCodes  | Description |
 |------------|-------------|-------------|
 | 400 | 1102`` `` | Invalid ``Amount`` |
-| 403 | 1401 | Cannot capture payments created by a different integrator |
+| 403 | 1330 <br> 1401 | Partial capture not supported yet <br> Cannot capture payments created by a different integrator |
 | 404 | - | Payment not found |
 | 409 | 1304 <br> 1305 <br> 1307`` `` | Cannot capture payment when payment is not reserved <br> Capture ``Amount`` cannot exceed the reserved amount <br> Payment has already been captured with a different amount |
 
