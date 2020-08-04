@@ -17,17 +17,17 @@ Cases in which knowing the customer before setting the amount includes loyalty p
 ## Specify planned capture delay
 It is required to specify when the payment is expected to be captured. The values are either *None*, *LessThan24Hours*, and *LessThan14Days*. These are values that control how payments are handled by MobilePay Support and it is therefore beneficial that these values are set as accurate as possible.
 The three values differ in the following way:
-* **None**: If reservations with this value are not captured **the following day** it is possible for MobilePay Support to reach out to make sure the reservations are handled (either cancelled or captured) although this is not guaranteed.
-* **LessThan24Hours**: If reservations with this value are not captured **the following 2-3 days** it is possible for MobilePay Support to reach out to make sure the reservations are handled (either cancelled or captured) although this is not guaranteed.
-* **LessThan14Days**: If reservations with this value are not captured MobilePay Support cannot help since the reservation will be expired and, hence, cannot be captured. Make sure this value is only used when appropriate.
+* **None**: If payments with this value are not captured **the following day** it is possible for MobilePay Support to reach out to make sure the payments are handled (either cancelled or captured) although this is not guaranteed.
+* **LessThan24Hours**: If payments with this value are not captured **the following 2-3 days** it is possible for MobilePay Support to reach out to make sure the payments are handled (either cancelled or captured) although this is not guaranteed.
+* **LessThan14Days**: If payments with this value are not captured MobilePay Support cannot help since the reservation will be expired and, hence, cannot be captured. Make sure this value is only used when appropriate.
 
 ## Order IDs
 Order IDs are not required to be unique however this is highly recommended.
-In error cases where the ``paymentId`` is lost it can be retrieved based on the ``posId`` and the ``orderId`` by calling the ``GET /v10/payments`` endpoint. If the ``orderId`` is unique the endpoint will return the expected ``paymentId``. However, if the ``orderId`` in not unique the mapping is overwrited and the endpoint will return the latest ``paymentId`` that was associated with the specified ``orderId``.
+In error cases where the ``paymentId`` is lost it can be retrieved based on the ``posId`` and the ``orderId`` by calling the ``GET /v10/payments`` endpoint. If the ``orderId`` is unique the endpoint will return the expected ``paymentId``. However, if the ``orderId`` is not unique the mapping is overwritten and the endpoint will return the latest ``paymentId`` that was associated with the specified ``orderId``.
 
-## Capture or cancellation of old reservations
-All reservations should be captured or cancelled as soon as possible practically. If an error occurs that result in either cancellation or capture being impossible the PoS client is responsible for persisting which payments should be captured at a later stage. When processing for capturing at the later stage, it is important that only payments that should be captured are processed.
-It is bad practice to poll for every outstanding payments that are in the *Reserved* state, since that could lead to payments being captured which should have been cancelled or expired.
+## Capture or cancellation of old payments
+All payments in <i>Reserved</i> state should be captured or cancelled as soon as practically possible. If an error occurs that makes it temporarily impossible to neither cancel or capture the payment, the PoS client is responsible for persisting which payments should be captured and which should be cancelled at a later stage. Later when processing old payments in <i>Reserved</i> state it is important that only payments that should be captured are captured and the same in regards to payments that should be cancelled.
+It is bad practice to poll for every outstanding payments that are in the <i>Reserved</i> state, since that could lead to payments being captured which should have been cancelled and vice versa.
 
 ## Polling
 It is possible to get information on a payment using ``GET /v10/payments/{paymentId}``, and it is possible to get information about an active check-in using ``GET /v10/pointofsales/{posId}/checkin``. 
