@@ -108,3 +108,17 @@ A refund is cancellable until it reaches the state *Captured* or *ExpiredAndCanc
 When the refund has been cancelled the state transitions to *CancelledByClient*. 
 
 [![](assets/images/cancel-refund-by-client.png)](assets/images/cancel-refund-by-client.png)
+
+## <a name="partial_capture"></a> Partial Capture
+
+It is possible for all merchants to capture partial amounts in the API. MobilePay do however have to comply with card scheme rules which means that when a payment is done using an underlying card, some payments will not be possible to partially capture. It is not possible for MobilePay to identify if a payment is done using card or account before the user has selected his/her payment source. Most payments in MobilePay are done using account to account payments where partial capture always is possible.
+To solve this every payment in <i>Reserved</i> state will contain information about whether or not it is possible to capture a partial amount on the payment. The information is presented in a flag ``PartialCapturePossible`` that will be set to either ``true`` or ``false``.  
+Based on the value of this flag, a mechant/integrator must choose to proceed with or cancel the payment before delivering the goods to the customer.
+
+Here is the flow where partial capture is possible.
+
+[![](assets/images/partial-capture.PNG)](assets/images/partial-capture.PNG)
+
+Here is the flow where partial capture is not possible and hence the payment needs to be cancelled.
+
+[![](assets/images/partial-capture-cancel.png)](assets/images/partial-capture-cancel.png)
