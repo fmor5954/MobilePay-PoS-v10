@@ -4,6 +4,14 @@ The Point of Sale API V10 will be in production **Q2 2020**. It will be released
 
 ## Changelog
 
+### 2020-08-07
+
+- Added a section on [Best Practices](best_practices) regarding Merchant onboarding.
+- Moved information regarding Partial Capture from [Best Practices](best_practices) to [Payment Flows](payment_flows#partial_capture) and added some diagrams describing the flow.
+- Removed the 403 forbidden statuscode when calling ``POST /payments/{paymentId}/capture`` from [API ERRORS](endpoint_errors)
+- Added a 409 conflict statuscode when calling ``POST /payments/{paymentId}/capture`` from [API ERRORS](endpoint_errors) that descibes if a partial capture is attempted on a payment where that is not possible.
+
+---
 ### 2020-07-13
 
 - Added a 403 error code for payments/{payid}/capture in [API ERRORS](endpoint_errors) which is returned when trying to make a partial capture which is still not supported. When it will be possible to do partial captures it will be listed here in the release notes.
