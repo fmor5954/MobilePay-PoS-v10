@@ -27,6 +27,8 @@ payment_flows:
   url: "payment_flows#refunds"
 - title: Cancel Flows
   url: "payment_flows#cancel"
+- title: Partial Capture
+  url: "payment_flows#partial_capture"
 
 endpoint_errors_title: API Errors
 endpoint_errors_url: "endpoint_errors"
