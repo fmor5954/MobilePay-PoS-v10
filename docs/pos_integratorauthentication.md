@@ -23,7 +23,6 @@ Now you are ready to move on to the authentication section below.
 The PoS V10 API uses access tokens to authenticate calls from integrator clients. In order for an integrator client to use the PoS V10 API, it must first obtain an access token using the Integrator Authentication API. The access tokens used in the PoS V10 solution identifies both an integrator client and the integrator and may optionally identify the merchant on which the client is calling on behalf of. 
 
 ### **Credentials Flow:**
-
 The Integrator Authentication solution is based on the OpenID/OAuth 2.0 specification. By following the OpenID Connect protocol, MobilePay makes it easy for integrators to integrate with MobilePay. Currently, the flow supported is the Client Credentials grant type. In the Credentials Flow (defined in OAuth 2.0 RFC 6749, section 4.4), integrators pass along their `client_id` and `client_secret` (received in Step 5 above) to authenticate themselves and obtain an access token. The Credentials Flow is illustrated in the diagram below.
 
 [![](assets/images/possekvensdiagram.png)](assets/images/possekvensdiagram.png)
@@ -32,10 +31,12 @@ The Integrator Authentication solution is based on the OpenID/OAuth 2.0 specific
  2. The Authorization Server validates the `client_id` and `client_secret`.
  3. The Authorization Server responds with an `access_token`.
  4. The Client application can use the `access_token` to call the PoS V10 API.
+
  5. The PoS V10 API responds.
  
  > NOTE: Oauth2 client secrets should not be stored in a way, where they can be accessed by someone from outside the integrator organisation.
 > To avoid storing Oauth2 secrets on merchant owned/operated devices, it is possible to ask MobilePay to enable long lived access tokens.
+> Please be aware that we require long lived access tokens to be locked to individual merchants.
 
 # **Obtaining an access token:**
 
