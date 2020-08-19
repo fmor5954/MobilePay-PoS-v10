@@ -5,7 +5,7 @@ The Point of Sale API V10 is now in production.
 ## Changelog
 
 ### 2020-08-19
-- Clarified the requirements for using long lived access tokens in [Integrator Authentication](pos_integratorauthentication)  
+- Clarified the requirements for using long lived access tokens in [Authentication](pos_integratorauthentication)  
 - Reduced the number of test cases in Self Certification by e.g. having more than one error or timeout scenario in one test case. Categories remain the same and this does not require a re-certification since this has not changed what is being tested.
 - Updated picture of Onboarding cases in [Self Certification](self_certification)
 - Removed x-mobilepay-client-system-name header from table in [Input Formats](input_formats)
