@@ -4,6 +4,13 @@ The Point of Sale API V10 is now in production.
 
 ## Changelog
 
+### 2020-08-19
+- Reduced the number of test cases in Self Certification by e.g. having more than one error or timeout scenario in one test case. Categories remain the same and this does not require a re-certification since this has not changed what is being tested.
+- Updated picture of Onboarding cases in [Self Certification](self_certification)
+- Removed x-mobilepay-client-system-name header from table in [Input Formats](input_formats)
+- Please do not hesitate to provide feedback
+
+---
 ### 2020-08-07
 
 - Added a section on [Best Practices](best_practices) regarding Merchant onboarding.
