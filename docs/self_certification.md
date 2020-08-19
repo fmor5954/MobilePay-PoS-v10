@@ -31,7 +31,7 @@ In the second step the Integrator selects which major features to certify. There
 ## Certification Step
 In the third step the integrator goes through all the different certification cases necessary using their client. In this step it might be necessary to operate the client to go through the different steps of a certification case.
 
-[![](assets/images/certificationstep.PNG)](assets/images/certificationstep.PNG)
+[![](assets/images/onboarding-cases.PNG)](assets/images/onboarding-cases.PNG)
 
 ## Approval step
 In the fourth and final step the Integrator gets a certificate proving that the client is certified. It is now possible for the client to access production.
