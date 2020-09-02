@@ -5,7 +5,7 @@ The Point of Sale API V10 is now in production.
 ## Changelog
 
 ### 2020-09-02
-- Clarified how to choose a beaconId in  [Best Practices](best_practices)  
+- Clarified how to choose a beaconId in  [Best Practices](best_practices#choosing_a_beaconid)  
 
 ---
 ### 2020-08-19
