@@ -4,6 +4,10 @@ The Point of Sale API V10 is now in production.
 
 ## Changelog
 
+### 2020-09-02
+- Clarified how to choose a beaconId in  [Best Practices](best_practices)  
+
+---
 ### 2020-08-19
 - Clarified the requirements for using long lived access tokens in [Authentication](pos_integratorauthentication)  
 - Reduced the number of test cases in Self Certification by e.g. having more than one error or timeout scenario in one test case. Categories remain the same and this does not require a re-certification since this has not changed what is being tested.
