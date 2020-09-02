@@ -42,3 +42,11 @@ The recommendation is to only set restrictions on payments where it is required 
 When a PoS client needs to onboard a merchant to the MobilePay V10 API, the Pos client needs to know the ``storeId`` for the store they will do payments on behalf of. There are two possible ways to obtain the ``storeId`` needed.
 * **Merchant VAT number**: If the merchant that needs onboarding is a new customer for the PoS Integrator, then Merchant VAT number should be used to obtain storeIds. The PoS integrator can call ``GET /v10/stores`` and the MobilePay backend will use the VAT number to return all storeIds for that merchant. To get details about each store you can then call the endpoint ``GET /v10/stores/{storeId}`` for each ``storeId``.
 * **MerchantBrandId + MerchantLocationId**: If the merchant that needs onboarding is already a customer of the PoS Integrator, then ``MerchantBrandId`` and ``MerchantLocationId`` can be used to obtain storeIds. The PoS client can call ``GET /v10/stores/?merchantBrandId={merchantBrandId}&merchantLocationId={merchantLocationId}`` for each location to get a list of storeIds that only contains the ``storeId`` for that location. This way the PoS client can avoid the process of looking up specific store data to determine which ``storeId`` represents which store.
+
+## Choosing a BeaconId
+There are three principles for choosing a BeaconId.
+1. If you have received a 15-digit Id from MobilePay - use that as your Id.
+2. If you have an earlier GUID that you need to use because you have it printed or similar - then use that GUID.
+3. Otherwise let MobilePay generate a new GUID for you everytime you create a PoS.
+
+Following this approach will lead to fewer issues with collisions for everyone.
