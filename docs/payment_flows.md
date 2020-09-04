@@ -64,11 +64,11 @@ Each captured payment can be refunded multiple times with the restriction that t
 the captured payment amount. A payment can be refunded up to 30 days after the payment was completed. After 30 days a refund is no longer possible with MobilePay.
 
 The sequence diagram below shows a sunshine scenario for a refund. Initiating a refund yields a ``refundId`` that can be
-used to query the status of the refund. A refund starts out in the *Initiated* state and transitions to the *Reserved*
+used to capture the refund. A refund starts out in the *Initiated* state and transitions to the *Reserved*
 state when the refund has been reserved as shown in the state diagram below. Once a refund has been reserved, the client 
 can choose to capture the refund, transitioning the state to *Captured*. When a refund is captured, the refunded amount 
 is immediately transferred to the customer and the customer will be able to see the refund in the activity list.
-A refund reservation will expire after 24 hours.
+A refund reservation will expire and be automatically captured after 24 hours.
 
 [![](assets/images/refund-flow.png)](assets/images/refund-flow.png)
 
@@ -104,7 +104,7 @@ the ``paymentId`` by the ``orderId`` and cancel afterwards.
 
 ### Cancelling Refunds
 
-A refund is cancellable until it reaches the state *Captured* or *ExpiredAndCancelled*. Refunds can only be cancelled by the client since there is no customer involved in the process. A refund can be cancelled by calling the endpoint ``POST /v10/refunds/{refundId}/cancel``. It requires the id of the refund that was returned when the refund was initiated.
+A refund is cancellable until it reaches one of the states *CancelledByMobilePay*, *Captured* or *ExpiredAndCapturred*. Refunds can only be cancelled by the client since there is no customer involved in the process. A refund can be cancelled by calling the endpoint ``POST /v10/refunds/{refundId}/cancel``. It requires the id of the refund that was returned when the refund was initiated.
 When the refund has been cancelled the state transitions to *CancelledByClient*. 
 
 [![](assets/images/cancel-refund-by-client.png)](assets/images/cancel-refund-by-client.png)
