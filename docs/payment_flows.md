@@ -61,7 +61,7 @@ It is required of the client to implement a periodically scheduled job of runnin
 Once a payment is captured, the payment amount is immediately charged from the customer. Therefore, the payment can no
 longer be cancelled. Instead, the payment amount can be transferred back to the customer, by performing *refunds*. 
 Each captured payment can be refunded multiple times with the restriction that the sum of the refunds cannot exceed
-the captured payment amount. A payment can be refunded up to 30 days after the payment was completed. After 30 days a refund is no longer possible with MobilePay.
+the captured payment amount. A payment can be refunded up to 30 days after the payment was captured. After 30 days a refund is no longer possible with MobilePay.
 
 The sequence diagram below shows a sunshine scenario for a refund. Initiating a refund yields a ``refundId`` that can be
 used to capture the refund. A refund starts out in the *Initiated* state and transitions to the *Reserved*
