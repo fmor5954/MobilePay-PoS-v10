@@ -11,7 +11,6 @@ The Self Certification process has four steps: Identification, Selection, Certif
 
 ## Identification Step
 In the first step the Integrator identifies themselves in the tool. The following information is needed:
-* Integrator IDs for Sandproduction and Production - ID received from MobilePay per mail, which identifies the Integrator organisation itself. Each Integrator should only have one Integrator ID for sandproduction and one Integrator ID for production.
 * Client IDs for Sandproduction and Production - ID created on the MobilePay Developer Portal which identifies the client to be certified. Each Integrator is allowed to create multiple Client IDs, however it is also acceptable to have just one Client ID.
 * Version numbering - The three dimensional number that defines the version of the Client that needs to be certified. See [Client Identification](api_principles#client_identification)
 * Client system name - the name of the software being certified.

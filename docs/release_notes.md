@@ -4,6 +4,11 @@ The Point of Sale API V10 is now in production.
 
 ## Changelog
 
+### 2020-09-08
+- Removed Integrator ID from [Self Certification](self_certification)
+- Updated screenshots in [Self Certification](self_certification)
+
+---
 ### 2020-09-02
 - Changed and updated how Refunds is planned to work. See description in [Payment Flows](payment_flows#refunds). Release of Refunds are planned to Ultimo September.
 
