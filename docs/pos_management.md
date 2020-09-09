@@ -12,7 +12,7 @@ When the integrator has received the ``merchantBrandId`` and the ``merchantLocat
 [![](assets/images/get_store.png)](assets/images/get_store.png)
 
 ## <a name="pos_creation"></a> PoS Creation
-A PoS is created using the ````POST /v10/pointofsales```` endpoint. A PoS is identified in the PoS V10 API by a ````posId```` that is assigned by MobilePay upon creation of the PoS. Clients can provide their own internal identifier as a ````merchantPosId```` upon creation and use the ````GET /v10/pointofsales```` endpoint to lookup a ````posId```` based on a ````merchantPosId````. 
+A PoS is created using the ````POST /v10/pointofsales```` endpoint. A PoS is identified in the PoS V10 API by a ````posId```` that is assigned by MobilePay upon creation of the PoS. Clients can provide their own internal identifier as a ````merchantPosId```` upon creation and use the ````GET /v10/pointofsales```` endpoint to lookup a ````posId```` based on a ````merchantPosId````. The `merchantPosId` field is required, so if no internal identifier is applicable, the client should generate and supply a random string (eg. a fresh GUID) instead.
 
 ### <a name="beacons"></a> Beacons
 The first thing to consider when creating a PoS is what beacon(s) will be used to connect MobilePay users to the given PoS.
