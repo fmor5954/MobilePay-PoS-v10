@@ -168,7 +168,7 @@ This page contains information regarding all the non-successful status-codes and
 |------------|-------------|-------------|
 | 400 | 1102`` `` <br> 1114`` `` <br> 1162`` `` <br> 1163`` `` <br> 1164`` `` | Invalid ``Amount`` <br> Invalid ``RefundOrderId`` <br> Invalid ``x-mobilepay-idempotency-key`` header <br> Duplicated ``x-mobilepay-idempotency-key`` header <br> Missing ``x-mobilepay-idempotency-key`` header |
 | 403 | 1401 | Cannot refund payments created by a different integrator |
-| 409 | 1001 <br> 1306`` `` <br> <br> 1354 | Payment not found <br> ``x-mobilepay-idempotency-key`` header has to be unique per request unless the request is a retry of a previous request <br> Refund of payment not possible when payment is not captured |
+| 409 | 1001 <br> 1306`` `` <br> <br> 1354 <br> 1365 <br> 1366 <br> 1367 | Payment not found <br> ``x-mobilepay-idempotency-key`` header has to be unique per request unless the request is a retry of a previous request <br> Refund of payment not possible when payment is not captured <br> Refund ``CurrencyCode`` is different than payment ``CurrencyCode`` <br> Payment is too old <br> Refund ``Amount`` is too high |
 
 </details><br>
 
