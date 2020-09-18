@@ -4,6 +4,9 @@ The Point of Sale API V10 is now in production.
 
 ## Changelog
 
+### 2020-09-18
+- Removed the following supportedBeaconTypes: `BluetoothOther`, `BluetoothMP1`, `BluetoothMP2`, `BluetoothMP3`, `BluetoothMP4` and replaced them with one `Bluetooth` in [Input Formats](input_formats). During certification when calling ``POST /pointofsales`` the request will now fail if supportedBeaconTypes contains any of the removed mentioned values above. If you already have a client that is certified and is using the old values, they will continue to work in production.
+
 ### 2020-09-14
 - Added 1365, 1366, 1367 error codes to [Api Errors](endpoint_errors.md)
 
