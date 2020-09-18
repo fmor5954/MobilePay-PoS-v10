@@ -38,7 +38,7 @@ For more information about a PoS, see [PoS Management](pos_management).
 | `posName` | String with at most 36 valid characters | Merchant defined PoS name.<br><br>The name is visible in the app, after the customer has checked in on the PoS. |
 | `callbackAlias` | String with at most 36 valid characters | Only for clients that use the [notification service](notification_service) to detect MobilePay payments. The `callbackAlias` is a key that identifies which notification endpoint to call for the given PoS. |
 | `beaconId` | A GUID or 15 digits | ID of the Beacon.<br><br>In case of physical device such as the MobilePay WhiteBox or a terminal the `beaconId` is a 15 digit string.<br><br>In case of no physical device (QR) the `beaconId` is not provided during PoS creation. MobilePay will generate a string containing a random GUID as the `beaconId`. |
-| `supportedBeaconTypes` | `QR` / `NFC` / `BluetoothOther` / `BluetoothMP1` / `BluetoothMP2` / `BluetoothMP3` / `BluetoothMP4`	| Beacon broadcast type.<br><br>Identifies an option for how a customer can check in on a PoS.<br><br>During the creation of a PoS, a list of Beacon Types has to be provided. |
+| `supportedBeaconTypes` | `QR` / `NFC` / `Bluetooth`	| Beacon broadcast type.<br><br>Identifies an option for how a customer can check in on a PoS.<br><br>During the creation of a PoS, a list of Beacon Types has to be provided. |
 | `calibrationType` | Integer between 0 and 65535 | Calibration Type of a physical beacon.<br><br>This is used by the MobilePay app to know the distance between the mobile device and the phycical beacon before the customer checks in on the PoS.<br><br>This is only applicable if the PoS contains any of the bluetooth `supportedBeaconTypes`. |
 
 ## Payments
