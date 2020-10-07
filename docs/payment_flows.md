@@ -20,7 +20,7 @@ It is also possible to initiate a payment on a PoS without an active check-in, a
 
 The diagram below shows all the possible states and transitions for a Payment flow. A payment can be cancelled by the customer until the customer has accepted the payment and the payment amount has been reserved. A payment can be cancelled by the client until it is captured or expires. After a payment has been captured, it can be [refunded](payment_flows#refunds), but can no longer be cancelled. A payment expires if it is neither cancelled nor captured within the lifetime of the reservation which is 7 days. If a payment expires, the state transitions to *ExpiredAndCancelled*.
 A payment in the *Initiated* or *IssuedToUser* state can also be cancelled by MobilePay if it has been inactive for too long or an error occurs while reserving the payment amount on the customer's card or account. If a payment is
-cancelled by MobilePay the state transitions to *CancelledByMobilePay*. If a payment includes [age restrictions](input_formats#restrictions) that prevents the customer from completing the payment, the payment is rejected by MobilePay and the state transitions to *RejectedByMobilePayDueToAgeRestrictions*. Payments without age restrictions will never transition to the *RejectedByMobilePayDueToAgeRestrictions* state.
+cancelled by MobilePay the state transitions to *CancelledByMobilePay*. If a payment includes [age restrictions](input_formats#restrictions) that prevents the customer from completing the payment, the payment is rejected by MobilePay and the state transitions to *RejectedByMobilePayDueToAgeRestrictions*. Payments without age restrictions will never transition to the *RejectedByMobilePayDueToAgeRestrictions* state. The Payment states *Initiated* and *IssuedToUser* are called *active* states and will block further payments on the same Point-of-Sale.
 
 [![](assets/images/payment-states.png)](assets/images/payment-states.png)
 
@@ -38,7 +38,7 @@ A prepared payment starts out in state *Prepared* and remains in this state unti
 
 ### <a name="prepared_payment_flow_states"></a>Payment States for the Prepared Payment Flow
 
-The diagram below shows all the possible states and transitions for a prepared payment flow. The "Prepared Payment Flow" state diagram expands upon the ["Payment Flow" state diagram](payment_flows#payment_flow_states) by adding two additional states, *Prepared* and *Paired*. The client and MobilePay can cancel a prepared payment. The customer can cancel a paired payment.
+The diagram below shows all the possible states and transitions for a prepared payment flow. The "Prepared Payment Flow" state diagram expands upon the ["Payment Flow" state diagram](payment_flows#payment_flow_states) by adding two additional states, *Prepared* and *Paired*. The client and MobilePay can cancel a prepared payment. The customer can cancel a paired payment. The Payment states *Initiated*, *Prepared*, *Paired* and *IssuedToUser* are called *active* states and will block further payments on the same Point-of-Sale.
 
 [![](assets/images/prepared-payment-states.png)](assets/images/prepared-payment-states.png)
 
