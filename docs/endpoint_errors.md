@@ -189,7 +189,7 @@ This page contains information regarding all the non-successful status-codes and
 | StatusCode | ErrorCodes  | Description |
 |------------|-------------|-------------|
 | 403 | 1402 | Cannot cancel refunds created by a different integrator |
-| 404 | - | Payment not found |
+| 404 | - | Refund not found |
 | 409 | 1352 | The refund cannot be cancelled in the current state |
 
 </details><br>
