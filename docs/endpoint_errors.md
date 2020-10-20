@@ -61,7 +61,7 @@ This page contains information regarding all the non-successful status-codes and
 | StatusCode | ErrorCodes  | Description |
 |------------|-------------|-------------|
 | 400 | 1102`` `` <br> 1105`` `` <br> 1117`` `` | Invalid ``Amount`` <br> Invalid ``UserMinimumAge`` <br> Invalid ``MerchantPaymentLabel`` |
-| 403 | 1401<br>1406 | Cannot ready payments prepared by a different integrator<br>Cannot ready payment prepared on behalf of a different merchant |
+| 403 | 1401<br>1406 | Cannot ready payments prepared by a different integrator<br>Cannot ready payments prepared on behalf of a different merchant |
 | 404 | - | Payment not found |
 | 409 | 1303 | Payment needs to be prepared before it can be marked as ready |
 
