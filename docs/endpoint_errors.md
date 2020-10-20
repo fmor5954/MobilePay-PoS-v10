@@ -19,7 +19,7 @@ This page contains information regarding all the non-successful status-codes and
 
 | StatusCode | ErrorCodes  | Description |
 |------------|-------------|-------------|
-| 403 | 1401 | Cannot query payments created by a different integrator |
+| 403 | 1401<br>1411 | Cannot query payments created by a different integrator<br>Cannot query payments created on behalf of a different merchant |
 | 404 | - | Payment not found |
 
 </details><br>
@@ -61,7 +61,7 @@ This page contains information regarding all the non-successful status-codes and
 | StatusCode | ErrorCodes  | Description |
 |------------|-------------|-------------|
 | 400 | 1102`` `` <br> 1105`` `` <br> 1117`` `` | Invalid ``Amount`` <br> Invalid ``UserMinimumAge`` <br> Invalid ``MerchantPaymentLabel`` |
-| 403 | 1401 | Cannot ready payments prepared by a different integrator |
+| 403 | 1401<br>1406 | Cannot ready payments prepared by a different integrator<br>Cannot ready payments prepared on behalf of a different merchant |
 | 404 | - | Payment not found |
 | 409 | 1303 | Payment needs to be prepared before it can be marked as ready |
 
@@ -73,7 +73,7 @@ This page contains information regarding all the non-successful status-codes and
 | StatusCode | ErrorCodes  | Description |
 |------------|-------------|-------------|
 | 400 | 1102`` `` | Invalid ``Amount`` |
-| 403 | 1401 | Cannot capture payments created by a different integrator |
+| 403 | 1401<br>1407 | Cannot capture payments created by a different integrator<br>Cannot capture payments created on behalf of a different merchant |
 | 404 | - | Payment not found |
 | 409 | 1304 <br> 1305 <br> 1307 <br> 1308`` `` | Cannot capture payment when payment is not reserved <br> Capture ``Amount`` cannot exceed the reserved amount <br> Payment has already been captured with a different amount <br> Partial capture not possible on this payment |
 
@@ -84,7 +84,7 @@ This page contains information regarding all the non-successful status-codes and
 
 | StatusCode | ErrorCodes  | Description |
 |------------|-------------|-------------|
-| 403 | 1401 | Cannot cancel payments created by a different integrator |
+| 403 | 1401<br>1408 | Cannot cancel payments created by a different integrator<br>Cannot cancel payments created on behalf of a different merchant |
 | 404 | - | Payment not found |
 | 409 | 1300 | The payment cannot be cancelled in the current state |
 
@@ -96,7 +96,7 @@ This page contains information regarding all the non-successful status-codes and
 
 | StatusCode | ErrorCodes  | Description |
 |------------|-------------|-------------|
-| 403 | 1400 | Cannot query point of sales created by a different integrator |
+| 403 | 1400<br>1410 | Cannot query point of sales created by a different integrator<br>Cannot query point of sales created on behalf of a different merchant |
 | 404 | - | Point of sale not found |
 
 </details><br>
@@ -136,7 +136,7 @@ This page contains information regarding all the non-successful status-codes and
 
 | StatusCode | ErrorCodes  | Description |
 |------------|-------------|-------------|
-| 403 | 1400 | Cannot delete point of sales created by a different integrator |
+| 403 | 1400<br>1409 | Cannot delete point of sales created by a different integrator<br>Cannot delete point of sales created on behalf of a different merchant |
 | 404 | - | Point of sale not found |
 
 </details><br>
