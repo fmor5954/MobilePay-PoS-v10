@@ -4,6 +4,10 @@ The Point of Sale API V10 is now in production.
 
 ## Changelog
 
+### 2020-10-20
+- Added merchant segregation: integrators can now only perform actions on entities on behalf of the merchants that they were created on behalf of.
+- Added error codes 1406, 1407, 1408, 1409, 1410, and 1411 to [API Errors](endpoint_errors.md).
+
 ### 2020-10-13
 - Refund functionality now ready and live in prod. See [Refund Flow](payment_flows#refunds) for documentation on how to implement the functionality. An integrator needs to be certified in the new Refund section on the self certification website, to use the refund endpoints in the production environment. Also see the MobilePay developer portal to check out the API documentation.
 
