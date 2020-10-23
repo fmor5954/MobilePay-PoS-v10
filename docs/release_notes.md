@@ -4,6 +4,9 @@ The Point of Sale API V10 is now in production.
 
 ## Changelog
 
+### 2020-10-23
+- Removed age validation from documentation since this is not possible to do.
+
 ### 2020-10-20
 - Added error codes 1406, 1407, 1408, 1409, 1410, and 1411 to [API Errors](endpoint_errors.md).
 
