@@ -60,7 +60,6 @@ For more information about payments, see [Payment Flows](payment_flows).
 |------|-------------|-------------|
 | `debitCardDisallowed` | Boolean | When `debitCardDisallowed` is set to true, debit cards cannot be used for this payment |
 | `creditCardDisallowed` | Boolean | When `creditCardDisallowed` is set to true, credit cards cannot be used for this payment |
-| `userMinimumAge` | Positive Integer | When `userMinimumAge` is set, MobilePay will cancel the payment if attempted accepted by users younger than the `userMinimumAge` |
 
 ## Valid characters
 
