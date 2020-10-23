@@ -38,7 +38,7 @@ This page contains information regarding all the non-successful status-codes and
 
 | StatusCode | ErrorCodes  | Description |
 |------------|-------------|-------------|
-| 400 | 1102`` `` <br> 1105`` `` <br> 1113`` `` <br> 1117`` `` <br> 1162`` `` <br> 1163`` `` <br> 1164`` `` | Invalid ``Amount`` <br> Invalid ``UserMinimumAge`` <br> Invalid ``OrderId`` <br> Invalid ``MerchantPaymentLabel`` <br> Invalid ``x-mobilepay-idempotency-key`` header <br> Duplicated ``x-mobilepay-idempotency-key`` header <br> Missing ``x-mobilepay-idempotency-key`` header |
+| 400 | 1102`` `` <br> 1113`` `` <br> 1117`` `` <br> 1162`` `` <br> 1163`` `` <br> 1164`` `` | Invalid ``Amount`` <br> Invalid ``OrderId`` <br> Invalid ``MerchantPaymentLabel`` <br> Invalid ``x-mobilepay-idempotency-key`` header <br> Duplicated ``x-mobilepay-idempotency-key`` header <br> Missing ``x-mobilepay-idempotency-key`` header |
 | 403 | 1400 | Cannot initiate payments on a point of sale created by a different integrator |
 | 409 | 1000 <br> 1301 <br> 1306`` `` <br> </p> | Point of Sale not found <br> A payment is already active. Cancel it before starting a new one <br> ``x-mobilepay-idempotency-key`` header has to be unique per request unless the request is a retry of a previous request <br>  |
 
@@ -60,7 +60,7 @@ This page contains information regarding all the non-successful status-codes and
 
 | StatusCode | ErrorCodes  | Description |
 |------------|-------------|-------------|
-| 400 | 1102`` `` <br> 1105`` `` <br> 1117`` `` | Invalid ``Amount`` <br> Invalid ``UserMinimumAge`` <br> Invalid ``MerchantPaymentLabel`` |
+| 400 | 1102`` `` <br> 1117`` `` | Invalid ``Amount`` <br> Invalid ``MerchantPaymentLabel`` |
 | 403 | 1401<br>1406 | Cannot ready payments prepared by a different integrator<br>Cannot ready payments prepared on behalf of a different merchant |
 | 404 | - | Payment not found |
 | 409 | 1303 | Payment needs to be prepared before it can be marked as ready |
