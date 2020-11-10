@@ -5,7 +5,7 @@ The Point of Sale API V10 is now in production.
 ## Changelog
 
 ### 2020-10-23
-- clarified language in the network and server errors paragraph of [API principles](api_principles#error_handling).
+- Clarified language in the network and server errors paragraph of [API principles](api_principles#error_handling).
 
 ---
 ### 2020-10-23
