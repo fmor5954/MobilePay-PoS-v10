@@ -5,20 +5,29 @@ The Point of Sale API V10 is now in production.
 ## Changelog
 
 ### 2020-10-23
+- clarified language in the network and server errors paragraph of [API principles](api_principles#error_handling).
+
+---
+### 2020-10-23
 - Removed age validation from documentation since this is not possible to do.
 
+---
 ### 2020-10-20
 - Added error codes 1406, 1407, 1408, 1409, 1410, and 1411 to [API Errors](endpoint_errors.md).
 
+---
 ### 2020-10-13
 - Refund functionality now ready and live in prod. See [Refund Flow](payment_flows#refunds) for documentation on how to implement the functionality. An integrator needs to be certified in the new Refund section on the self certification website, to use the refund endpoints in the production environment. Also see the MobilePay developer portal to check out the API documentation.
 
+---
 ### 2020-09-18
 - Removed the following supportedBeaconTypes: `BluetoothOther`, `BluetoothMP1`, `BluetoothMP2`, `BluetoothMP3`, `BluetoothMP4` and replaced them with one `Bluetooth` in [Input Formats](input_formats). During certification when calling ``POST /pointofsales`` the request will now fail if supportedBeaconTypes contains any of the removed mentioned values above. If you already have a client that is certified and is using the old values, they will continue to work in production.
 
+---
 ### 2020-09-14
 - Added 1365, 1366, 1367 error codes to [Api Errors](endpoint_errors.md)
 
+---
 ### 2020-09-08
 - Removed Integrator ID from [Self Certification](self_certification)
 - Updated screenshots in [Self Certification](self_certification)
