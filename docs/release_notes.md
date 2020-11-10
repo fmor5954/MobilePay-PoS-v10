@@ -6,7 +6,7 @@ The Point of Sale API V10 is now in production.
 
 ### 2020-10-23
 - Clarified language in the network and server errors paragraph of [API principles](api_principles#error_handling).
-- Added desciption of why it is important to either capture or cancel a refund in error [situations](payment_flows#cancel_flows).
+- Added desciption of why it is important to either capture or cancel a refund in error situations in [Cancelling refunds](payment_flows#cancel).
 
 ---
 ### 2020-10-23
