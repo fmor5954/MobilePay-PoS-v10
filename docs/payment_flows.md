@@ -76,7 +76,7 @@ Until the refund has been captured, the client can also choose to cancel the ref
 
 [![](assets/images/refund-states.png)](assets/images/refund-states.png)
 
-To refund a payment, the client needs to provide the paymentId of the payment to be refunded. In case the paymentId has been lost it can be retrieved by calling ``GET /v10/payments?posId={posId}&orderId={orderId}&state=Captured`` with the posId and orderId from the payment to be refunded.
+To refund a payment, the client needs to provide the paymentId of the payment to be refunded. In case the paymentId has been lost it can be retrieved by calling ``GET /v10/payments?orderId={orderId}&state=Captured`` with the orderId from the payment to be refunded.
 
 ## <a name="cancel"></a> Cancel Flows
 
