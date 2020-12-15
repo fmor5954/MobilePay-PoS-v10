@@ -4,6 +4,9 @@ The Point of Sale API V10 is now in production.
 
 ## Changelog
 
+### 2020-12-15
+- Added section to [Refund Flow](payment_flows#refunds) regarding how to get a `paymentId` for a refund if the `paymentId` is not known.
+
 ### 2020-10-23
 - Clarified language in the network and server errors paragraph of [API principles](api_principles#error_handling).
 - Added desciption of why it is important to either capture or cancel a refund in error situations in [Cancelling refunds](payment_flows#cancel).
