@@ -8,4 +8,4 @@ The correct format for creating a QR code for Point of Sale is: mobilepaypos://p
 Please be aware that it is all lowercase. The POS beacon id is either a 15 digit number (no letters) or a GUID.
 The format is both for sandbox and production environment.  
 
-If yo want to print the QR code we have a template for MobilePay stickers: https://www.mobilepay.dk/materialebank/marketingmateriale/klistermaerker/mobilepay-klistermaerker-m-plads-til-qr
+If yo want to print the QR code we have a template for MobilePay stickers on the [MobilePay website](https://www.mobilepay.dk/materialebank/marketingmateriale/klistermaerker/mobilepay-klistermaerker-m-plads-til-qr)
