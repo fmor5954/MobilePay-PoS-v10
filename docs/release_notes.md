@@ -7,6 +7,7 @@ The Point of Sale API V10 is now in production.
 ### 2021-01-29
 - Added guide to [Create QR Codes](create_qr_codes)
 
+---
 ### 2020-12-15
 - Added section to [Refund Flow](payment_flows#refunds) regarding how to get a `paymentId` for a refund if the `paymentId` is not known.
 
