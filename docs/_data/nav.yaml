@@ -62,6 +62,9 @@ notification_service_url: "notification_service"
 best_practices_title: Best Practices
 best_practices_url: "best_practices"
 
+create_qr_codes_title: Create QR Codes
+create_qr_codes_url: "create_qr_codes"
+
 changes_overview_title: Changes in V10
 changes_overview_url: "overview_of_changes"
 
