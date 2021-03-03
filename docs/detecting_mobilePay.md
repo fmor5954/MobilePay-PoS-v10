@@ -13,14 +13,6 @@ the terminal may start polling the endpoint ``GET /v10/pointofsales/{posId}/chec
 
 [![](assets/images/POD_polling.png)](assets/images/POD_polling.png)
 
-
-## <a name="ble"></a> BLE 2-way communication
-
-It is possible to get information about check-ins via Bluetooth Low Energy. To use this approach the integrator will need to use one of the Bluetooth communication protocols defined by MobilePay.
-
-[![](assets/images/POD_BLEsignal.png)](assets/images/POD_BLEsignal.png)
-
-
 ## <a name="notification"></a> Notification service
 
 Some interfaces do not include a possibility for user activation. In these cases an endpoint can be exposed by the MobilePay PoS integrator. This endpoint will be called with a check-in notification when a customer checks in. After receiving a notification the client can poll the ``GET /v10/pointofsales/{posId}/checkin`` endpoint for that PoS. For more details see [Notification Service](notification_service).
