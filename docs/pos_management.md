@@ -3,19 +3,22 @@ The Point-of-Sale (PoS) represents the contact point between a customer wanting 
 To initiate a MobilePay payment it is necessary to first create a PoS. 
 
 ## Onboarding
-Each PoS belongs to a *Store* which in turn is associated with a *Brand*. A brand can be thought of as a combination of a name and a logo. When a MobilePay customer checks in on a PoS they will see the brand name and the logo in the app, which helps the customer confirm that they have in fact checked in where they intended. An example of a brand could be 7-Eleven in Denmark or K-Market in Finland. A brand is identified by a ``merchantBrandId``. Each brand consists of one or more stores. Each store also has a name which is also shown to the customer when they check in on a PoS that belongs to that store. A ``merchantLocationId`` together with a ``merchantBrandId`` identifies a store within a brand. 
+Each PoS belongs to a *Store* which belongs to a *Brand*. A brand can be thought of as a combination of a name and a logo. An example of a brand could be 7-Eleven in Denmark or K-Market in Finland. Each brand consists of one or more stores. A store is the representation of a merchant's shop. It contains a ``storeId`` as well as the name and the address of the shop. When a MobilePay customer checks in on a PoS they will see the brand logo and name as well as the shop name in the app, which helps the customer confirm that they have in fact checked in where they intended.
+When an integrator needs to onboard a PoS they need the ``storeId`` to create all the PoSes on that store. The ``storeId`` will therefore have to be persisted in an application configuration file for subsequent calls to the V10 API. There are generally two ways to acquire the ``storeId``. The recommended way is depending on the merchant being migrated from an existing MobilePay PoS solution, or if it is a new solution. The two different approaches are described below. 
 
-Brands and stores are created by the merchant when onboarding with MobilePay PoS and the merchant will typically provide the ``merchantBrandId``s and ``merchantLocationId``s for the merchant's brands and stores to the integrator.
+### No existing solution
+When an integrator is building a new integration for a merchant they need to know the store to which the PoS should be created. The goal is to get a list of all the stores that belongs to a merchant and then use the ``storeId`` from the appropriate store to create the PoS. First the integrator needs to call ``GET /v10/stores`` without any query parameters and the endpoint will return all the ``storeId``s based on the Merchant VAT either provided in the ``x-mobilepay-merchant-vat-number`` header or provided in the access token (see [Authentication](pos_integratorauthentication#obtaining_an_access_token)). Then the integrator will loop through the list and for each ``storeId`` call ``GET /v10/stores/{storeid}`` that will return the store information for that specific store. In the end the integrator have a list of all stores belonging to that merchant and then the integrator knows which ``storeId`` for each store to use when creating a PoS. Below diagram illustrates a flow to get all merchant stores.
 
-When the integrator has received the ``merchantBrandId`` and the ``merchantLocationId`` they will have to call ``GET /v10/stores`` with the two ids, and in return they will receive a ``storeId`` which will be used to create all the PoSes on that store. The ``storeId`` will therefore have to be persisted in an application configuration file for subsequent calls to the V10 API. Below diagram illustrates a flow for getting the ``storeId`` using ``GET /v10/stores``.
+[![](assets/images/GetStoresByVat.PNG)](assets/images/GetStoresByVat.PNG)
+
+### Existing solution
+A brand is identified by a ``merchantBrandId``. A ``merchantLocationId`` together with a ``merchantBrandId`` identifies a store within a brand.
+If the merchant already has a MobilePay PoS solution with integration to either API V06, V07 or V08 then an integrator can use the already known ``merchantBrandId`` and ``merchantLocationId`` to get the ``StoreId``. To get the ``StoreId`` the integrator will have to call ``GET /v10/stores`` with the two ids, and in return they will receive the ``storeId``. Below diagram illustrates a flow for getting the ``storeId`` using ``GET /v10/stores``.
 
 [![](assets/images/get_store.png)](assets/images/get_store.png)
 
-### Temporary VAT lookup endpoint
-To help integrators with migration of PoSes, we introduced an endpoint allowing a lookup of merchant VAT number by `merchantBrandId` and `merchantLocationId`. It is available under `GET https://api.mobilepay.dk/pos-core-for-integrators/public/v1/stores/vat`, having two query parameters: `merchantBrandId` and `merchantLocationId`.
-
-This endpoint is temporary, meant only to help with migration of PoSes to V10. It will be removed in 2021Q2.
-
+In contrary to the API V06, V07 and V08, MobilePay requires that the integrator provides a Merchant VAT in API V10. To help integrators acquire the VAT, a temporary endpoint has been developed to help ease the migration of PoSes from earlier versions of the API to V10. It is available under ``GET https://api.mobilepay.dk/pos-core-for-integrators/public/v1/stores/vat``, having two query parameters: ``merchantBrandId`` and ``merchantLocationId``.
+Then endpoint will be removed in 2021Q2.
 
 ## <a name="pos_creation"></a> PoS Creation
 A PoS is created using the ````POST /v10/pointofsales```` endpoint. A PoS is identified in the PoS V10 API by a ````posId```` that is assigned by MobilePay upon creation of the PoS. Clients can provide their own internal identifier as a ````merchantPosId```` upon creation and use the ````GET /v10/pointofsales```` endpoint to lookup a ````posId```` based on a ````merchantPosId````. The `merchantPosId` field is required, so if no internal identifier is applicable, the client should generate and supply a random string (eg. a fresh GUID) instead.
