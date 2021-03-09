@@ -4,6 +4,10 @@ The Point of Sale API V10 is now in production.
 
 ## Changelog
 
+### 2021-03-09
+- Re-wrote the [Onboarding](pos_management#onboarding) section of the Point-of-Sale Management page. The section now contains a description on how to acquire store information needed for integrators when onboarding a merchant, which does not have a MobilePay PoS solution using an older version of the MobilePay PoS API. 
+
+---
 ### 2021-01-29
 - Added guide to [Create QR Codes](create_qr_codes)
 
