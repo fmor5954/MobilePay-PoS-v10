@@ -42,7 +42,7 @@ In cases where the client uses a physical device then that device will have a Mo
 If reading the ````beaconId```` from the device is not possible, we recommend to store the ````beaconId```` locally in a configuration file so that it persists through reboots.
 
 ### <a name="callback"></a>Callback
-If the client system cannot detect when a MobilePay user wants to pay and therefore needs to use the [Notification service](detecting_mobilePay#notification), the client should set the callback parameter accordingly when calling ````POST /v10/pointofsales````.
+If the client system cannot detect when a MobilePay user wants to pay and therefore needs to use the [Notification service](detecting_mobilepay#notification), the client should set the callback parameter accordingly when calling ````POST /v10/pointofsales````.
 It is recommended to store the callback alias in the config file of the application.
 
 ### Naming
