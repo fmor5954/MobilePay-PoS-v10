@@ -8,9 +8,9 @@ detecting_mobilepay_title: Detecting MobilePay
 detecting_mobilepay_url: "detecting_mobilepay"
 detecting_mobilepay:
 - title: User Activation
-  url: "detecting_mobilePay#user_activation"
+  url: "detecting_mobilepay#user_activation"
 - title: Notification Service
-  url: "detecting_mobilePay#notification_service"
+  url: "detecting_mobilepay#notification"
 
 payment_flows_title: Payment Flows
 payment_flows_url: "payment_flows"
