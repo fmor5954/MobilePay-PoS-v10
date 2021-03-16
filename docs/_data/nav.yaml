@@ -5,7 +5,7 @@ pos_integratorauthentication_title: Authentication
 pos_integratorauthentication_url: "pos_integratorauthentication"
 
 detecting_mobilepay_title: Detecting MobilePay
-detecting_mobilepay_url: "detecting_mobilePay"
+detecting_mobilepay_url: "detecting_mobilepay"
 detecting_mobilepay:
 - title: User Activation
   url: "detecting_mobilePay#user_activation"
