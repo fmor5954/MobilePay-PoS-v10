@@ -5,7 +5,7 @@ The Point of Sale API V10 is now in production.
 ## Changelog
 
 ### 2021-03-16
-- Removed CalibrationType property from [Input Formats](input_formats#pos_management) since it has been removed from the V10 API.
+- Removed CalibrationType property from [Input Formats](input_formats#poses) since it has been removed from the V10 API.
 - Made the [Detecting MobilePay by notification service](detecting_mobilepay#notification) section more clear by adding the call ``GET /pointofsales/{posid}/checkin`` to the flow diagram
 
 ---
