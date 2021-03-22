@@ -139,8 +139,9 @@ We recommend retrying failed requests due to network and server errors using one
 * Retrying requests up to a fixed number of times using an exponential backoff with jitter strategy (i.e.
 doubling the delay between each retried call and adding some randomness to the delay to avoid overloading the backend).
 
-We suggest retrying a failed request 2 times (results in 3 requests including the first one).
-You must at max retry 5 times.
+We suggest retrying a failed request **2** times (which results in 3 requests including the first one).
+
+You may at **max** retry **5** times (which results in 6 requests).
 
 ### Client errors
 
