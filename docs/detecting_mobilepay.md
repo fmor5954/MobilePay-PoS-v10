@@ -1,6 +1,6 @@
 # <a name="detecting_mobilepay"></a> Detecting MobilePay
 
-There are three ways in MobilePay PoS for a terminal/client to become aware that MobilePay has been chosen by the customer as the payment option: User activation, Notification service and BLE 2-way communication.
+There are two ways in MobilePay PoS for a terminal/client to become aware that MobilePay has been chosen by the customer as the payment option: User activation and Notification service.
 
 ## <a name="user_activation"></a> User activation
 

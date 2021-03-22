@@ -136,8 +136,12 @@ as a retried call.
 ### <a name="retrying_requests"></a> Retrying requests
 We recommend retrying failed requests due to network and server errors using one of these strategies:
 * Retrying requests up to a fixed number of times with a constant delay between each call. 
-* Retrying requests until a proper response is received, using an exponential backoff with jitter strategy (i.e.
+* Retrying requests up to a fixed number of times using an exponential backoff with jitter strategy (i.e.
 doubling the delay between each retried call and adding some randomness to the delay to avoid overloading the backend).
+
+We suggest retrying a failed request **2** times (which results in 3 requests including the first one).
+
+You may at **max** retry **5** times (which results in 6 requests).
 
 ### Client errors
 
