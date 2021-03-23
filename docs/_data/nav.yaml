@@ -5,14 +5,12 @@ pos_integratorauthentication_title: Authentication
 pos_integratorauthentication_url: "pos_integratorauthentication"
 
 detecting_mobilepay_title: Detecting MobilePay
-detecting_mobilepay_url: "detecting_mobilePay"
+detecting_mobilepay_url: "detecting_mobilepay"
 detecting_mobilepay:
 - title: User Activation
-  url: "detecting_mobilePay#user_activation"
-- title: BLE 2-way Communication
-  url: "detecting_mobilePay#ble"
+  url: "detecting_mobilepay#user_activation"
 - title: Notification Service
-  url: "detecting_mobilePay#notification_service"
+  url: "detecting_mobilepay#notification"
 
 payment_flows_title: Payment Flows
 payment_flows_url: "payment_flows"
@@ -61,6 +59,9 @@ notification_service_url: "notification_service"
 
 best_practices_title: Best Practices
 best_practices_url: "best_practices"
+
+create_qr_codes_title: Create QR Codes
+create_qr_codes_url: "create_qr_codes"
 
 changes_overview_title: Changes in V10
 changes_overview_url: "overview_of_changes"

@@ -38,8 +38,7 @@ The Integrator Authentication solution is based on the OpenID/OAuth 2.0 specific
 > To avoid storing Oauth2 secrets on merchant owned/operated devices, it is possible to ask MobilePay to enable long lived access tokens.
 > Please be aware that we require long lived access tokens to be locked to individual merchants.
 
-# **Obtaining an access token:**
-
+# <a name="obtaining_access_token"></a>**Obtaining an access token:**
 This document only describes the token endpoint used to request an access token. A complete specification of the endpoints, responses and response codes for the Integrator Authentication API can be found in the [APIs section](https://sandbox-developer.mobilepay.dk/product) of the Developer Portal.
  
 The token endpoint (`POST /connect/token`) is used when requesting an access token for an onboarded integrator client. The following

@@ -24,8 +24,9 @@ In the second step the Integrator selects which major features to certify. There
 * Prepared payments - Certification in sections of the API necessary for doing a prepared payment.
 * Payments with restrictions - Certification in sections of the API necessary for handling restrictions to payments.
 * Prepared payments with restrictions - Certification in sections of the API necessary for handling restrictions to prepared payments.
+* Refunds - Certification in sections of the API necessary for handling refunds.
 
-[![](assets/images/selectionstep.PNG)](assets/images/selectionstep.PNG)
+[![](assets/images/categories_step.PNG)](assets/images/categories_step.PNG)
 
 ## Certification Step
 In the third step the integrator goes through all the different certification cases necessary using their client. In this step it might be necessary to operate the client to go through the different steps of a certification case.

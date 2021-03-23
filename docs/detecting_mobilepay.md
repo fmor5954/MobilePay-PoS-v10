@@ -1,6 +1,6 @@
 # <a name="detecting_mobilepay"></a> Detecting MobilePay
 
-There are three ways in MobilePay PoS for a terminal/client to become aware that MobilePay has been chosen by the customer as the payment option: User activation, Notification service and BLE 2-way communication.
+There are two ways in MobilePay PoS for a terminal/client to become aware that MobilePay has been chosen by the customer as the payment option: User activation and Notification service.
 
 ## <a name="user_activation"></a> User activation
 
@@ -12,14 +12,6 @@ A last example of a user activation is in the case of a QR code being displayed 
 the terminal may start polling the endpoint ``GET /v10/pointofsales/{posId}/checkin`` to determine if a customer has checked in. The terminal may only poll for a check-in while the QR code is displayed on the terminal to ensure the check-in endpoint is not overloaded with requests.
 
 [![](assets/images/POD_polling.png)](assets/images/POD_polling.png)
-
-
-## <a name="ble"></a> BLE 2-way communication
-
-It is possible to get information about check-ins via Bluetooth Low Energy. To use this approach the integrator will need to use one of the Bluetooth communication protocols defined by MobilePay.
-
-[![](assets/images/POD_BLEsignal.png)](assets/images/POD_BLEsignal.png)
-
 
 ## <a name="notification"></a> Notification service
 

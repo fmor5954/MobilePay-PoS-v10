@@ -4,12 +4,51 @@ The Point of Sale API V10 is now in production.
 
 ## Changelog
 
+### 2021-03-22
+- Added explicit retry suggestions and rules in [Retrying requests](api_principles#retrying_requests)
+
+### 2021-03-16
+- Removed CalibrationType property from [Input Formats](input_formats#poses) since it has been removed from the V10 API.
+- Made the [Detecting MobilePay by notification service](detecting_mobilepay#notification) section more clear by adding the call ``GET /pointofsales/{posid}/checkin`` to the flow diagram
+
+---
+### 2021-03-09
+- Re-wrote the [Onboarding](pos_management#onboarding) section of the Point-of-Sale Management page. The section now contains a description on how to acquire store information needed for integrators when onboarding a merchant, which does not have a MobilePay PoS solution using an older version of the MobilePay PoS API. 
+
+---
+### 2021-01-29
+- Added guide to [Create QR Codes](create_qr_codes)
+
+---
+### 2020-12-15
+- Added section to [Refund Flow](payment_flows#refunds) regarding how to get a `paymentId` for a refund if the `paymentId` is not known.
+
+---
+### 2020-10-23
+- Clarified language in the network and server errors paragraph of [API principles](api_principles#error_handling).
+- Added desciption of why it is important to either capture or cancel a refund in error situations in [Cancelling refunds](payment_flows#cancel).
+
+---
+### 2020-10-23
+- Removed age validation from documentation since this is not possible to do.
+
+---
+### 2020-10-20
+- Added error codes 1406, 1407, 1408, 1409, 1410, and 1411 to [API Errors](endpoint_errors.md).
+
+---
+### 2020-10-13
+- Refund functionality now ready and live in prod. See [Refund Flow](payment_flows#refunds) for documentation on how to implement the functionality. An integrator needs to be certified in the new Refund section on the self certification website, to use the refund endpoints in the production environment. Also see the MobilePay developer portal to check out the API documentation.
+
+---
 ### 2020-09-18
 - Removed the following supportedBeaconTypes: `BluetoothOther`, `BluetoothMP1`, `BluetoothMP2`, `BluetoothMP3`, `BluetoothMP4` and replaced them with one `Bluetooth` in [Input Formats](input_formats). During certification when calling ``POST /pointofsales`` the request will now fail if supportedBeaconTypes contains any of the removed mentioned values above. If you already have a client that is certified and is using the old values, they will continue to work in production.
 
+---
 ### 2020-09-14
 - Added 1365, 1366, 1367 error codes to [Api Errors](endpoint_errors.md)
 
+---
 ### 2020-09-08
 - Removed Integrator ID from [Self Certification](self_certification)
 - Updated screenshots in [Self Certification](self_certification)

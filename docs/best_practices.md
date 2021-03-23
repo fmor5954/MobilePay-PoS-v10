@@ -35,7 +35,6 @@ For both of these endpoints, it is allowed to do polling at most once per second
 
 ## Payment restrictions
 It is possible to restrict which card types can be used for a payment. This restriction is available in order to support that some countries have restrictions on which cards can be used for certain products.
-It is also possible to set a minimum age for the paying customer. As an example, this can be set on payments involving alcohol or gambling products.
 The recommendation is to only set restrictions on payments where it is required to do so by the law or in case there are some business related reasons for restricting the payment. You can put restrictions when starting payments with either ``POST /v10/payments/`` or ``POST /v10/payments/{paymentId}/ready``. See [Restrictions formatting](input_formats#restrictions) for how to provide restrictions.
 
 ## Merchant onboarding

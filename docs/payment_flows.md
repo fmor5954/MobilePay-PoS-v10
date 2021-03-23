@@ -2,7 +2,7 @@
 
 The MobilePay PoS API exposes two separate flows for payments which are documented in this section. All payments must be explicitly captured by the client after the customer has approved the payment. The capture amount can be for the full or a partial amount (if allowed on the payment).
 
-For a client to start a payment flow, the client first has to detect that a customer is present, ready and willing to pay. In the following descriptions of payment flows it is assumed that the client has already detected a customer. How to detect a customer wanting to pay with MobilePay is described in the [Detecting MobilePay](detecting_mobilePay) section. 
+For a client to start a payment flow, the client first has to detect that a customer is present, ready and willing to pay. In the following descriptions of payment flows it is assumed that the client has already detected a customer. How to detect a customer wanting to pay with MobilePay is described in the [Detecting MobilePay](detecting_mobilepay) section. 
 
 ## <a name="payment_flow"></a>Payment Flow
 
@@ -20,7 +20,7 @@ It is also possible to initiate a payment on a PoS without an active check-in, a
 
 The diagram below shows all the possible states and transitions for a Payment flow. A payment can be cancelled by the customer until the customer has accepted the payment and the payment amount has been reserved. A payment can be cancelled by the client until it is captured or expires. After a payment has been captured, it can be [refunded](payment_flows#refunds), but can no longer be cancelled. A payment expires if it is neither cancelled nor captured within the lifetime of the reservation which is 7 days. If a payment expires, the state transitions to *ExpiredAndCancelled*.
 A payment in the *Initiated* or *IssuedToUser* state can also be cancelled by MobilePay if it has been inactive for too long or an error occurs while reserving the payment amount on the customer's card or account. If a payment is
-cancelled by MobilePay the state transitions to *CancelledByMobilePay*. If a payment includes [age restrictions](input_formats#restrictions) that prevents the customer from completing the payment, the payment is rejected by MobilePay and the state transitions to *RejectedByMobilePayDueToAgeRestrictions*. Payments without age restrictions will never transition to the *RejectedByMobilePayDueToAgeRestrictions* state.
+cancelled by MobilePay the state transitions to *CancelledByMobilePay*. The Payment states *Initiated* and *IssuedToUser* are called *active* states and will block further payments on the same Point-of-Sale.
 
 [![](assets/images/payment-states.png)](assets/images/payment-states.png)
 
@@ -38,7 +38,7 @@ A prepared payment starts out in state *Prepared* and remains in this state unti
 
 ### <a name="prepared_payment_flow_states"></a>Payment States for the Prepared Payment Flow
 
-The diagram below shows all the possible states and transitions for a prepared payment flow. The "Prepared Payment Flow" state diagram expands upon the ["Payment Flow" state diagram](payment_flows#payment_flow_states) by adding two additional states, *Prepared* and *Paired*. The client and MobilePay can cancel a prepared payment. The customer can cancel a paired payment.
+The diagram below shows all the possible states and transitions for a prepared payment flow. The "Prepared Payment Flow" state diagram expands upon the ["Payment Flow" state diagram](payment_flows#payment_flow_states) by adding two additional states, *Prepared* and *Paired*. The client and MobilePay can cancel a prepared payment. The customer can cancel a paired payment. The Payment states *Initiated*, *Prepared*, *Paired* and *IssuedToUser* are called *active* states and will block further payments on the same Point-of-Sale.
 
 [![](assets/images/prepared-payment-states.png)](assets/images/prepared-payment-states.png)
 
@@ -46,7 +46,7 @@ The diagram below shows all the possible states and transitions for a prepared p
 Of all the ways a payment flow can fail, there are some error scenarios related to initiating payment flows that the client needs to focus on. The following sections describes how to handle payment-in-progress errors and how to handle payments hanging in the *Reserved* state.
 
 ### Payment in progress error handling
-In the case of an unexpected restart of the client where the payment flow cannot be continued it might be necessary to cancel the active payment since there can be only one active payment on a PoS. If the ``paymentId`` of the active payment is lost it can be retrieved by calling ``GET /v10/payments`` using the ``posId`` and setting the *active* boolean to true. When the ``paymentId`` is retrieved the payment can be cancelled and the PoS is now ready for a new payment flow. A sequence diagram showing how to handle a payment-in-progress error is shown below.
+In the case of an unexpected restart of the client where the payment flow cannot be continued it might be necessary to cancel the active payment since there can be only one active payment on a PoS. If the ``paymentId`` of the active payment is lost it can be retrieved by calling ``GET /v10/payments`` using the ``posId`` and ``orderId``. When the ``paymentId`` is retrieved the payment can be cancelled and the PoS is now ready for a new payment flow. A sequence diagram showing how to handle a payment-in-progress error is shown below.
 [![](assets/images/initiate_payment_error_active_payment.png)](assets/images/initiate_payment_error_active_payment.png)
 
 ### Hanging payments in reserved state
@@ -76,6 +76,8 @@ Until the refund has been captured, the client can also choose to cancel the ref
 
 [![](assets/images/refund-states.png)](assets/images/refund-states.png)
 
+To refund a payment, the client needs to provide the paymentId of the payment to be refunded. In case the paymentId has been lost it can be retrieved by calling ``GET /v10/payments?orderId={orderId}&state=Captured`` with the orderId from the payment to be refunded.
+
 ## <a name="cancel"></a> Cancel Flows
 
 The V10 API supports cancelling of payments and refunds.
@@ -103,6 +105,8 @@ should either retry the call (as described in [Error Handling](api_principles#er
 the ``paymentId`` by the ``orderId`` and cancel afterwards.
 
 ### Cancelling Refunds
+
+A client can end up in situations, where the status of a refund is not known e.g. in cases, where parts of the solution is down, or there are network issues. In these cases, it is important, that the client retains information about refunds, that have been requested. It is then possible for the client to follow up on whether the refund should be cancelled or captured. Examples for either cancel or capture could be: In the case of cancel - the customer has received refund in cash instead. In the case of capture - the customer has left the store with information that the payment will be refunded.
 
 A refund is cancellable until it reaches one of the states *CancelledByMobilePay*, *Captured* or *ExpiredAndCapturred*. Refunds can only be cancelled by the client since there is no customer involved in the process. A refund can be cancelled by calling the endpoint ``POST /v10/refunds/{refundId}/cancel``. It requires the id of the refund that was returned when the refund was initiated.
 When the refund has been cancelled the state transitions to *CancelledByClient*. 
