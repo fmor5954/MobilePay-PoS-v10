@@ -41,6 +41,13 @@ In case the client only allows QR beacons but is not able to generate a QR code 
 In cases where the client uses a physical device then that device will have a MobilePay ````beaconId```` associated with it. On PoS creation this ````beaconId```` has to be provided. Some devices allows a client to read the ````beaconId```` from it. If that is the case we recommend to read the ````beaconId```` when the client reboots and query the PoS to see if the ````beaconId````s match. If not delete the PoS and re-create it with the new ````beaconId````. This will make it possible to replace the device if its broken, and only have to reboot the system to propagate the changes.
 If reading the ````beaconId```` from the device is not possible, we recommend to store the ````beaconId```` locally in a configuration file so that it persists through reboots.
 
+### Preventing payments before checkin
+Normally, a user is allowed to check in on a point of sale before a payment is created. Then, once the payment is created, the payment will pop up on the user's phone for them to pay. However, in some cases, this is not what you want.
+
+For example, in a self-service solution, a user could check in on a point of sale, walk away, and then they'll get paired to the next user's payment if the next user does not take over the check-in in time.
+
+When creating a PoS, the client can set the `requirePaymentBeforeCheckin` property to `true` (by default it is `false`), and then users are not allowed to check in to a point of sale before a payment is created on the point of sale. This ensures that no users are checked in when the payment is created, so you can ensure the correct user gets paired.
+
 ### <a name="callback"></a>Callback
 If the client system cannot detect when a MobilePay user wants to pay and therefore needs to use the [Notification service](detecting_mobilepay#notification), the client should set the callback parameter accordingly when calling ````POST /v10/pointofsales````.
 It is recommended to store the callback alias in the config file of the application.
