@@ -4,6 +4,9 @@ The Point of Sale API V10 is now in production.
 
 ## Changelog
 
+### 2021-03-23
+- Added `requirePaymentBeforeCheckin` documentation to [PoS management](pos_management#preventing-payments-before-checkin)
+
 ### 2021-03-22
 - Added explicit retry suggestions and rules in [Retrying requests](api_principles#retrying_requests)
 
