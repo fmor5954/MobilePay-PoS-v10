@@ -13,7 +13,7 @@ When an integrator is building a new integration for a merchant they need to kno
 
 ### Existing solution
 A brand is identified by a ``merchantBrandId``. A ``merchantLocationId`` together with a ``merchantBrandId`` identifies a store within a brand.
-If the merchant already has a MobilePay PoS solution with integration to either API V06, V07 or V08 then an integrator can use the already known ``merchantBrandId`` and ``merchantLocationId`` to get the ``StoreId``. To get the ``StoreId`` the integrator will have to call ``GET /v10/stores`` with the two ids, and in return they will receive the ``storeId``. Below diagram illustrates a flow for getting the ``storeId`` using ``GET /v10/stores``.
+If the merchant already has a MobilePay PoS solution with integration to either API V06, V07 or V08 then an integrator can use the already known ``merchantBrandId`` and ``merchantLocationId`` to get the ``StoreId``, If the ``merchantBrandId`` and ``merchantLocationId`` is not known the process from the above paragraph will be the most efficient. To get the ``StoreId`` the integrator will have to call ``GET /v10/stores`` with the two ids, and in return they will receive the ``storeId``. Below diagram illustrates a flow for getting the ``storeId`` using ``GET /v10/stores``.
 
 [![](assets/images/get_store.png)](assets/images/get_store.png)
 
