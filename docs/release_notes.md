@@ -4,6 +4,9 @@ The Point of Sale API V10 is now in production.
 
 ## Changelog
 
+### 2021-05-25
+- Expanded list of valid characters in [Input Formats](input_formats#valid_characters)
+
 ### 2021-03-23
 - Added `requirePaymentBeforeCheckin` documentation to [PoS management](pos_management#preventing-payments-before-checkin)
 
