@@ -35,7 +35,19 @@ Depending on the client setup, there are different use cases for handling ````be
 In case the client only allows QR beacons (no physical device) and can create a QR code dynamically (i.e generate a QR code and show it on a screen in opposition to printing a physical QR code), then the client can choose to let MobilePay create a GUID to use as ````beaconId````. The client then omits to provide a ````beaconId```` on PoS creation and afterwards queries the PoS to get the ````beaconId````. The client can then store the ````beaconId```` in memory for QR code generation. Everytime the client reboots the client then has to query the PoS and grab the ````beaconId````. This way the client is not required to store a ````beaconId```` in a configuration file since they can rely on querying it dynamically.
 
 #### Client that only supports static QR codes
-In case the client only allows QR beacons but is not able to generate a QR code dynamically, the client should generate the ````beaconId```` and provide it on PoS creation. The ````beaconId```` should then be stored locally in a configuration file so that it can be used if the PoS needs to be updated (i.e. deleted and re-created. See [PoS Update and Deletion](pos_management#pos_updating_deletion)). To avoid clashes, the client must use a GUID as the ````beaconId````.
+In case the client only allows QR beacons but is not able to generate a QR code dynamically, the client needs the ````beaconId```` for the PoS creation. The following options are available:
+1.	The client can generate the ````beaconId```` and provide it on PoS creation
+2.	An arbitrary ````beaconId```` can be produced outside the client and be inputted to the client for instance using readers, scanners or inputted using a keyboard. MobilePay can generate the ````beaconId```` automatically as part of the production of stickers, if stickers are needed as the “acceptance device”.
+
+If stickers are needed as the acceptance device, we suggest that you use MobilePay to help deliver QR-code stickers to your merchants using option 2.
+
+> NOTE: The easiest way of handling stickers is if the client is set up to support activation and deactivation of QR codes directly from the merchant location. 
+> 
+> You can order the stickers directly from MobilePay’s print supplier’s sticker webshop, and the Beacon IDs and QR codes will automatically be generated. The BeaconId will be printed on the sticker, so that it can be added by the merchant, or the merchant can report to you, which Beacon IDs the merchant uses.
+> 
+> [Sticker Webshop](https://mp.bordingcentral.dk)
+
+The ````beaconId```` should then be stored locally in a configuration file so that it can be used if the PoS needs to be updated (i.e. deleted and re-created. See [PoS Update and Deletion](pos_management#pos_updating_deletion)). To avoid clashes, the client must use a GUID as the ````beaconId````.
 
 #### Client that supports physical devices (terminals, MobilePay white boxes)
 In cases where the client uses a physical device then that device will have a MobilePay ````beaconId```` associated with it. On PoS creation this ````beaconId```` has to be provided. Some devices allows a client to read the ````beaconId```` from it. If that is the case we recommend to read the ````beaconId```` when the client reboots and query the PoS to see if the ````beaconId````s match. If not delete the PoS and re-create it with the new ````beaconId````. This will make it possible to replace the device if its broken, and only have to reboot the system to propagate the changes.
