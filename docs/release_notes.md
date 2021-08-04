@@ -4,15 +4,22 @@ The Point of Sale API V10 is now in production.
 
 ## Changelog
 
+### 2021-08-04
+- Made it clear that Integrator's notification endpoint must return 200 on success in [Notification Service](notification_service#notification_endpoint)
+
+---
 ### 2021-05-25
 - Expanded list of valid characters in [Input Formats](input_formats#valid_characters)
 
+---
 ### 2021-03-23
 - Added `requirePaymentBeforeCheckin` documentation to [PoS management](pos_management#preventing-payments-before-checkin)
 
+---
 ### 2021-03-22
 - Added explicit retry suggestions and rules in [Retrying requests](api_principles#retrying_requests)
 
+---
 ### 2021-03-16
 - Removed CalibrationType property from [Input Formats](input_formats#poses) since it has been removed from the V10 API.
 - Made the [Detecting MobilePay by notification service](detecting_mobilepay#notification) section more clear by adding the call ``GET /pointofsales/{posid}/checkin`` to the flow diagram

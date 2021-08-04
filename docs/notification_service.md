@@ -22,7 +22,7 @@ The requirements for a notification endpoint are as follows:
 ```
 * The format of the different fields can be found [here](input_formats).
 
-* The notification endpoint should respond with status code ``200 OK`` when the notification was processed successfully. The MobilePay notification service will retry notification calls in case of any other response than ``200 OK``. The service will retry the call 2 times.
+* The notification endpoint must respond with status code ``200 OK`` when the notification is processed successfully. The MobilePay notification service will retry notification calls in case of any other response than ``200 OK``. The service will retry the call 3 times.
 
 ## Migrating to a different notification endpoint
 
