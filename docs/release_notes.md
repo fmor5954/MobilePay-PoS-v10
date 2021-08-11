@@ -4,6 +4,9 @@ The Point of Sale API V10 is now in production.
 
 ## Changelog
 
+### 2021-08-11
+- Made it clear that it is the ``beaconId`` that should be used in [QR code generation](create_qr_codes) instead of ``posId``.
+
 ### 2021-08-04
 - Made it clear that Integrator's notification endpoint must return 200 on success in [Notification Service](notification_service#notification_endpoint)
 
