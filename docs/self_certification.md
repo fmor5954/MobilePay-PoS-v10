@@ -1,6 +1,6 @@
 # <a name="self_certification"></a> Self Certification
 
-> NOTE: you will need to be subscribed to the PoS V10 for Self Certification API in the MobilePay SandBox Developer Portal, in order to start a self certification
+> NOTE: you will need to be subscribed to the PoS V10 for Self Certification API in the MobilePay SandBox Developer Portal, in order to start a self certification.
 
 The certification process changes with MobilePay PoS API v10. For the new API all Major and Minor versions of clients 
 must be certified. MobilePay provides an automatic certification process where it is possible 
