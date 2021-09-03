@@ -1,5 +1,7 @@
 # <a name="self_certification"></a> Self Certification
 
+> NOTE: you will need to be subscribed to the "PoS V10 for Self Certification" API in the MobilePay SandBox Developer Portal, in order to start a self certification.
+
 The certification process changes with MobilePay PoS API v10. For the new API all Major and Minor versions of clients 
 must be certified. MobilePay provides an automatic certification process where it is possible 
 for most integrators to create a fully automated self-certification. The certification concludes 
@@ -46,7 +48,8 @@ Please use the following data for configuring your client before commencing self
 | Self Certification info |  |
 |:---|---:|
 | Website link | [https://pos-certification.mobilepay.dk/mobilepay-pos-selfcertification-website/index.html](https://pos-certification.mobilepay.dk/mobilepay-pos-selfcertification-website/index.html) |
-| API base URL  | [https://api.sandbox.mobilepay.dk/pos-self-certification-api/pos/v10](https://api.sandbox.mobilepay.dk/pos-self-certification-api/pos/v10) |
+| PoS self-certification API base URL | [https://api.sandbox.mobilepay.dk/pos-self-certification-api/pos/v10](https://api.sandbox.mobilepay.dk/pos-self-certification-api/pos/v10) |
+| Integrator Authentication API base URL | [https://api.sandbox.mobilepay.dk/integrator-authentication](https://api.sandbox.mobilepay.dk/integrator-authentication)
 | Store ID | 9d0a9c45-1793-4e82-9410-b0ee6779ab60 |
 | merchantLocationId | 00001 |
 | merchantBrandId | MPPOSCERT1 |
