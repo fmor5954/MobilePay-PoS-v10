@@ -50,7 +50,6 @@ Please use the following data for configuring your client before commencing self
 | Website link | [https://pos-certification.mobilepay.dk/mobilepay-pos-selfcertification-website/index.html](https://pos-certification.mobilepay.dk/mobilepay-pos-selfcertification-website/index.html) |
 | PoS self-certification API base URL | [https://api.sandbox.mobilepay.dk/pos-self-certification-api/pos/v10](https://api.sandbox.mobilepay.dk/pos-self-certification-api/pos/v10) |
 | Integrator Authentication API base URL | [https://api.sandbox.mobilepay.dk/integrator-authentication](https://api.sandbox.mobilepay.dk/integrator-authentication)
-| Store ID | 9d0a9c45-1793-4e82-9410-b0ee6779ab60 |
 | merchantLocationId | 00001 |
 | merchantBrandId | MPPOSCERT1 |
 | VAT number DK | 90000028 |
