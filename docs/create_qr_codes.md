@@ -10,4 +10,4 @@ Note: It is the ``beaconId`` and <b>NOT</b> the ``posId`` that should be used in
 Please be aware that it is all lowercase. The PoS ``beaconId`` is either a 15 digit number (no letters) or a GUID.
 The format is both for sandbox and production environment.  
 
-If yo want to print the QR code we have a template for MobilePay stickers on the [MobilePay website](https://mobilepay.dk/materialebank/marketingmateriale/skilte/skiltning-til-pos)
+If you want to print the QR code we have a template for MobilePay stickers on the [MobilePay website](https://mobilepay.dk/materialebank/marketingmateriale/skilte/skiltning-til-pos)
