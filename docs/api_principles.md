@@ -115,7 +115,7 @@ POST /v10/payments/prepare
 POST /v10/refunds
 POST /v10/pointofsales
 ````
-For each call to the endpoints above, the client should generate a unique idempotency key for the
+For each call to the endpoints above, the client must generate a unique idempotency key for the
 given call. In case the client decides to retry a call due to a failure, the client **must** use the
 same idempotency key, to allow the backend to identify it as a retried call. We recommend using a
 client-generated *GUID* as the idempotency key.
