@@ -38,7 +38,7 @@ For more information about a PoS, see [PoS Management](pos_management).
 | `posName` | String with at most 36 valid characters | Merchant defined PoS name.<br><br>The name is visible in the app, after the customer has checked in on the PoS. |
 | `callbackAlias` | String with at most 36 valid characters | Only for clients that use the [notification service](notification_service) to detect MobilePay payments. The `callbackAlias` is a key that identifies which notification endpoint to call for the given PoS. |
 | `beaconId` | A GUID or 15 digits | ID of the Beacon.<br><br>In case of physical device such as the MobilePay WhiteBox or a terminal the `beaconId` is a 15 digit string.<br><br>In case of no physical device (QR) the `beaconId` is not provided during PoS creation. MobilePay will generate a string containing a random GUID as the `beaconId`. |
-| `requirePaymentBeforeCheckin` | Boolean | When set to `true`, a user will not be allowed to check-in before a payment is created on this PoS. See [Preventing payments before checkin](pos_management#preventing-payments-before-checkin).
+| `requirePaymentBeforeCheckin` | Boolean | When set to `true`, a user will not be allowed to check-in before a payment is created on this PoS. See [Preventing checkin before payment](pos_management#preventing-checkin-before-payment).
 | `supportedBeaconTypes` | `QR` / `NFC` / `Bluetooth`	| Beacon broadcast type.<br><br>Identifies an option for how a customer can check in on a PoS.<br><br>During the creation of a PoS, a list of Beacon Types has to be provided. |
 
 ## Payments
