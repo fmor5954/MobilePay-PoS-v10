@@ -53,7 +53,7 @@ The ````beaconId```` should then be stored locally in a configuration file so th
 In cases where the client uses a physical device then that device will have a MobilePay ````beaconId```` associated with it. On PoS creation this ````beaconId```` has to be provided. Some devices allows a client to read the ````beaconId```` from it. If that is the case we recommend to read the ````beaconId```` when the client reboots and query the PoS to see if the ````beaconId````s match. If not delete the PoS and re-create it with the new ````beaconId````. This will make it possible to replace the device if its broken, and only have to reboot the system to propagate the changes.
 If reading the ````beaconId```` from the device is not possible, we recommend to store the ````beaconId```` locally in a configuration file so that it persists through reboots.
 
-### Preventing payments before checkin
+### Preventing checkin before payment
 Normally, a user is allowed to check in on a point of sale before a payment is created. Then, once the payment is created, the payment will pop up on the user's phone for them to pay. However, in some cases, this is not what you want.
 
 For example, in a self-service solution, a user could check in on a point of sale, walk away, and then they'll get paired to the next user's payment if the next user does not take over the check-in in time.
