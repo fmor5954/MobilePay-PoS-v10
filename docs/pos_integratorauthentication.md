@@ -35,8 +35,6 @@ The Integrator Authentication solution is based on the OpenID/OAuth 2.0 specific
  5. The PoS V10 API responds.
  
  > NOTE: Oauth2 client secrets should not be stored in a way, where they can be accessed by someone from outside the integrator organisation.
-> To avoid storing Oauth2 secrets on merchant owned/operated devices, it is possible to ask MobilePay to enable long lived access tokens.
-> Please be aware that we require long lived access tokens to be locked to individual merchants.
 
 # <a name="obtaining_access_token"></a>**Obtaining an access token:**
 This document only describes the token endpoint used to request an access token. A complete specification of the endpoints, responses and response codes for the Integrator Authentication API can be found in the [APIs section](https://sandbox-developer.mobilepay.dk/product) of the Developer Portal.
